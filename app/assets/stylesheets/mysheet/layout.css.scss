@@ -24,6 +24,7 @@
 	border-radius: $buttonRadius;
 	height: 7em;
 	&.reason {
+		line-height: 16px;
 		background: lighten($mainColor, 55%); 
 		border: solid 1px lighten($mainColor, 50%);
 		box-shadow: 5px 5px 5px darken($mainColor, 25%);
@@ -83,7 +84,7 @@
 }
 
 body { 
-	background: url(clouds.jpeg) no-repeat center center fixed; 
+	background: url(flag.jpeg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -96,7 +97,7 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 0; 
-	height: 2.75em;
+	height: 5.5em;
 	background: rgba(#000, 0); 
 	cursor: pointer; 
 	display: inline-block; 

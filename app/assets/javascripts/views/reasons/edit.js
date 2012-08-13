@@ -26,13 +26,19 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 	
 	renderLeft: function() {
 		this.options.reasons.sort();
+		var reasons = this.options.reasons.where({topic_id: this.options.topic.get('id')});
 		var attributes = {
-			reasons: this.options.reasons.where({topic_id: this.options.topic.get('id')}),
+			reasons: reasons,
 			user: this.options.current_user,
 			tasks: this.options.tasks,
 			reason_id: this.options.reason.get('id')
 		};
 		$('#left').html(JST['reasons/index'](attributes));
+		for (i = 0; i < reasons.length; i++) {
+			if (reasons[i].get('id') === this.options.reason.get('id')) {
+				$('#left').scrollTop(i * 80);
+			}
+		}
 	},
 	
 	renderRight: function() {
