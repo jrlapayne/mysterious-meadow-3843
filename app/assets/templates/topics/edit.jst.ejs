@@ -1,0 +1,28 @@
+<div class = "sidebar at left top">
+	<div class = "sidebar wrapper top">
+		<div id = "left" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "page content">
+	<div class = "mypanel misc">
+		<form id = "edit_topic">
+			<label>Title:</label>
+			<input type = "text" id = "topic_title" value = "<%= topic.get('title') %>" maxlength = "40">
+			<label>Description:</label>
+			<input type = "text" id = "topic_description" value = "<%= topic.get('description') %>">
+			<div style = "text-align: center">
+				<input class = "blend button radius" type = "submit" value = "Update Topic">
+			</div>
+		</form>
+	</div>
+</div>
+<div class = "sidebar at right top">
+	<div class = "sidebar wrapper top">
+		<div id = "right" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "sidebar at right bottom">
+	<div class = "sidebar wrapper bottom" style = "text-align: center">
+		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+	</div>
+</div>

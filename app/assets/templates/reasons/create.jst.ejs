@@ -1,0 +1,41 @@
+<div class = "sidebar at left top">
+	<div class = "sidebar wrapper top">
+		<div id = "left" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "sidebar at left bottom">
+	<div class = " sidebar wrapper bottom" style = "text-align: center">
+		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Reason +</button>
+	</div>
+</div>
+<div class = "page content">
+	<div class = "mypanel misc">
+		<%= topic.get('title') %></br>
+		<%= topic.get('description') %></br>
+		<form id = "new_reason">
+			<label>Title:</label>
+			<input type = "text" id = "new_reason_title">
+			<label>Description:</label>
+			<input type = "text" id = "new_reason_description">
+			<label>Source Url 1:</label>
+			<input type = "text" id = "new_reason_url1">
+			<label>Source Url 2:</label>
+			<input type = "text" id = "new_reason_url2">
+			<label>Source Url 3:</label>
+			<input type = "text" id = "new_reason_url3">
+			<div style = "text-align: center">
+				<input class = "blend button radius" type = "submit" value = "Create Reason">
+			</div>
+		</form>
+	</div>
+</div>
+<div class = "sidebar at right top">
+	<div class = "sidebar wrapper top">
+		<div id = "right" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "sidebar at right bottom">
+	<div class = "sidebar wrapper bottom" style = "text-align: center">
+		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+	</div>
+</div>

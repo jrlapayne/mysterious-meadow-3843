@@ -1,0 +1,56 @@
+.mousescroll {
+	overflow: hidden;
+    height:100%;
+	
+	&:hover {
+		overflow-y: scroll;
+	}
+}
+
+.page {
+	margin: 0 auto;
+	position: relative;
+	
+	&.wrapper {
+		width: $screenWidth;
+	}
+	
+	&.content {
+		width: $screenWidth / 2;
+	}
+}
+
+.sidebar {
+	width: $screenWidth / 4;
+
+	&.at {
+		position: absolute;
+		
+		&.left {
+			left: 0;
+		}
+		&.right {
+			right: 0;
+		}
+		&.top {
+			top: 0;
+		}
+		&.bottom {
+			bottom: 0;
+		}
+	}
+	
+	&.wrapper {
+		position: fixed;
+		overflow: hidden;
+		
+		&.top {
+			height: 85%;
+			top: 0;
+		}
+		&.bottom {
+			height: 15%;
+			bottom: 0;
+		}
+	}
+}

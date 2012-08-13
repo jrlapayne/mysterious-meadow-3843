@@ -1,0 +1,28 @@
+<div>
+	<ul>
+		<% topics.each(function(t)  { %>
+			<% if (topic_id === t.get('id')) { %>
+				<div class = "mypanel topic active" style = "position: relative; height: 6em; margin: 1.3em">
+			<% } else { %>
+				<div class = "mypanel topic" style = "position: relative; height: 6em; margin: 1.3em">	
+			<% } %>
+				<div style = "position: absolute; top: 0; left: 0; width: 100%; text-align:center">
+					<div style = "font-size: 1.5em; margin-top: 0.5em">
+						<button class = "invisible-button" id = "topic" value = "<%= t.get('id') %>" style = "margin-top: 1em"></button>
+						<u><%= t.get('title') %></u>
+					</div>
+				</div>
+				<div style = "position: absolute; bottom: 2em; left: 0; width: 100%; text-align:center">
+					<div style = "position: relative; width: 80%; margin: 0 auto">	
+						<div class = "meter-container" style = "border-radius: 5px"></div>
+						<% var user_tasks = tasks.where({topic_id: t.get('id'), user_id: user.get('id')}).length - 1; %>
+						<% var width = (user_tasks / reasons.where({topic_id: t.get('id')}).length) * 100; %>
+						<% if (user_tasks > 0) { %>
+							<div class = "meter-bar" style = "width: <%= width %>%"></div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		<% }); %>
+	</ul>
+</div>

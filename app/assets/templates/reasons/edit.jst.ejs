@@ -1,0 +1,39 @@
+<div class = "sidebar at left top">
+	<div class = "sidebar wrapper top">
+		<div id = "left" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "sidebar at left bottom">
+	<div class = " sidebar wrapper bottom" style = "text-align: center">
+		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Reason +</button>
+	</div>
+</div>
+<div class = "page content">
+	<div class = "mypanel misc">
+		<form id = "edit_reason">
+			<label>Title:</label>
+			<input type = "text" id = "reason_title" value = "<%= reason.get('title') %>">
+			<label>Description:</label>
+			<input type = "text" id = "reason_description" value = "<%= reason.get('description') %>">
+			<label>Source Url 1:</label>
+			<input type = "text" id = "reason_url1" value = "<%= reason.get('url1') %>">
+			<label>Source Url 2:</label>
+			<input type = "text" id = "reason_url2" value = "<%= reason.get('url2') %>">
+			<label>Source Url 3:</label>
+			<input type = "text" id = "reason_url3" value = "<%= reason.get('url3') %>">
+			<div style = "text-align: center">
+				<input class = "blend button radius" type = "submit" value = "Update Reason">
+			</div>
+		</form>
+	</div>
+</div>
+<div class = "sidebar at right top">
+	<div class = "sidebar wrapper top">
+		<div id = "right" class = " mousescroll sidebar"></div>
+	</div>
+</div>
+<div class = "sidebar at right bottom">
+	<div class = "sidebar wrapper bottom" style = "text-align: center">
+		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+	</div>
+</div>

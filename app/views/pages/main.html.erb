@@ -1,0 +1,24 @@
+<div class = "page wrapper apanel " id = "page">Loading...</div>
+
+<script type = 'text/json' id = 'json'>
+	{
+		"users": <%= User.all.to_json %>,
+		"topics": <%= Topic.all.to_json %>,
+		"reasons": <%= Reason.all.to_json %>,
+		"tasks": <%= Task.all.to_json %>,
+		"scorings": <%= Scoring.all.to_json %>
+	}
+</script>
+
+<%= content_for :javascript do -%>
+	<script type = 'text/javascript'>
+		$(function() {
+			var div, data;
+			div = $('<div></div>');
+			div.html($('#json').text());
+			data = JSON.parse(div.text());
+		
+			Debacle.init(data);
+		});
+	</script>
+<% end %>

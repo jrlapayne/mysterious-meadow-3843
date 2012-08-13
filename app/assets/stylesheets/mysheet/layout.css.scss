@@ -1,0 +1,155 @@
+.simple-border {
+	border: 1px solid #f00;
+}
+
+.upvote { 
+	border-color: transparent transparent rgba(#000,0.5) transparent;
+	border-style: solid;
+	border-width: 0px 5px 10px 5px;
+	width: 0;
+	height: 0;
+}
+
+.downvote { 
+	border-color: rgba(#000,0.5) transparent transparent transparent;
+	border-style: solid;
+	border-width: 10px 5px 0px 5px;
+	width: 0;
+	height: 0;
+}
+
+.mypanel {
+	margin: 20px; 
+	padding: 20px; 
+	border-radius: $buttonRadius;
+	height: 7em;
+	&.reason {
+		background: lighten($mainColor, 55%); 
+		border: solid 1px lighten($mainColor, 50%);
+		box-shadow: 5px 5px 5px darken($mainColor, 25%);
+		
+		&.active {
+			background: lighten($mainColor, 35%); 
+			border: solid 1px lighten($mainColor, 30%);
+			box-shadow: inset 3px 3px 3px darken($mainColor, 25%);
+		}
+		
+		&.visited {
+			background: lighten($mainColor, 50%); 
+			border: solid 1px lighten($mainColor, 45%);
+			box-shadow: inset 3px 3px 3px darken($mainColor, 25%);
+		}
+	}
+	&.topic {
+		background: lighten($successColor, 55%); 
+		border: solid 1px lighten($successColor, 50%);
+		box-shadow: 5px 5px 5px darken($successColor, 25%);
+		
+		&.active {
+			background: lighten($successColor, 35%); 
+			border: solid 1px lighten($successColor, 30%);
+			box-shadow: inset 3px 3px 3px darken($successColor, 25%);
+		}
+		
+		&.visited {
+			background: lighten($successColor, 50%); 
+			border: solid 1px lighten($successColor, 45%);
+			box-shadow: inset 3px 3px 3px darken($successColor, 25%);
+		}
+	}
+	&.misc {
+		height: 100%;
+		background: lighten($blendColor, 45%); 
+		border: solid 1px lighten($blendColor, 40%);
+		box-shadow: 5px 5px 5px darken($blendColor, 25%);
+	}
+}
+
+.apanel {
+	background: lighten($blendColor, 50%); 
+	border: solid 1px lighten($blendColor, 45%); 
+	margin: 0; 
+	padding: 0; 
+	box-shadow: 5px 5px 5px darken($blendColor, 25%);
+	border-radius: $buttonRadius;
+	height: 100%;
+}
+
+.checkmark {
+	font-size: 2em;
+	color: $mainColor;
+	text-shadow: 1px 1px 1px rgba(#000, 0.5);
+	cursor: default;
+}
+
+body { 
+	background: url(clouds.jpeg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.invisible-butt {
+	width: 100%;
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0; 
+	height: 2.75em;
+	background: rgba(#000, 0); 
+	cursor: pointer; 
+	display: inline-block; 
+	line-height: 1; 
+	margin: 0; 
+	outline: none;
+	border: none; 
+	padding: $btnBase ($btnBase * 2) ($btnBase + 1);  
+	margin-bottom: $btnBase;
+	@include border-radius($buttonRadius);
+	&:hover {
+		 background-color: rgba($mainColor, 0.25);
+	}
+	&:active {
+		@include reverse-gradients(rgba(#000, 0.15));
+	}
+}
+
+button.vote {
+	width: auto; 
+	background: lighten($mainColor, 50%); 
+	border: 1px solid lighten($mainColor, 45%); 
+	box-shadow: inset 0 1px 0 rgba(#fff, 0.5); 
+	color: #fff; 
+	cursor: pointer; 
+	display: inline-block;
+	font-size: 10px; 
+	font-weight: bold; 
+	line-height: 1; 
+	margin: 0; 
+	outline: none; 
+	padding: 3px 5px 3px;
+	position: relative; 
+	text-align: center; 
+	text-decoration: none; 
+	margin-bottom: 0;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	@include gradients(lighten($mainColor, 50%));
+	&:hover { 
+		border: 1px solid lighten($mainColor, 25%);
+		background-color: lighten(($mainColor), 30%); 
+		@include gradients(lighten($mainColor, 30%)) 
+	}
+	&:active { 
+		border: 1px solid lighten($mainColor, 20%);
+		background-color: lighten(($mainColor), 25%);
+		@include reverse-gradients(lighten($mainColor, 25%));
+		box-shadow: 0 0 0 rgba(0,0,0,0.5);
+	}
+}
+
+
+
+
+
