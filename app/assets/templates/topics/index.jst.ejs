@@ -2,14 +2,19 @@
 	<ul>
 		<% topics.each(function(t)  { %>
 			<% if (topic_id === t.get('id')) { %>
-				<div class = "mypanel topic active" style = "position: relative; height: 6em; margin: 1.3em">
+				<div class = "mypanel topic active" style = "position: relative; height: 9em; margin: 1.3em">
 			<% } else { %>
-				<div class = "mypanel topic" style = "position: relative; height: 6em; margin: 1.3em">	
+				<div class = "mypanel topic" style = "position: relative; height: 9em; margin: 1.3em">	
 			<% } %>
 				<div style = "position: absolute; top: 0; left: 0; width: 100%; text-align:center">
 					<div style = "font-size: 1.5em; margin-top: 0.5em">
-						<button class = "invisible-button" id = "topic" value = "<%= t.get('id') %>" style = "margin-top: 1em"></button>
-						<u><%= t.get('title') %></u>
+						<button class = "invisible-butt topic" id = "topic" value = "<%= t.get('id') %>" style = "margin-top: 1em"></button>
+						<u><span style = "font-size: 18px"><%= t.get('title') %></span></u>
+					</div>
+				</div>
+				<div style = "text-align: center">
+					<div style = "margin-top: 25px">
+					<img src = "assets/weed.svg.png" width = "40px" height = "40px"/>
 					</div>
 				</div>
 				<div style = "position: absolute; bottom: 2em; left: 0; width: 100%; text-align:center">
@@ -18,7 +23,7 @@
 						<% var user_tasks = tasks.where({topic_id: t.get('id'), user_id: user.get('id')}).length - 1; %>
 						<% var width = (user_tasks / reasons.where({topic_id: t.get('id')}).length) * 100; %>
 						<% if (user_tasks > 0) { %>
-							<div class = "meter-bar" style = "width: <%= width %>%"></div>
+							<div class = "meter-bar" style = "width: <%= width %>%; border-radius: 5px"></div>
 						<% } %>
 					</div>
 				</div>

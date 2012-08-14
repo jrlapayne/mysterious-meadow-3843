@@ -11,7 +11,8 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 		'click #plus_topic' : 'plusTopic',
 		'click #minus_topic' : 'minusTopic',
 		'click #plus_reason' : 'plusReason',
-		'click #minus_reason' : 'minusReason'
+		'click #minus_reason' : 'minusReason',
+		'click #cancel' : 'cancel'
 	},
 	
 	render: function() {
@@ -108,8 +109,13 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 	plusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		var reason;
 		
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: 1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();
@@ -118,10 +124,19 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 	minusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		var reason;
 		
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: -1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();
+	},
+	
+	cancel: function() {
+		parent.history.back();
 	}
 });

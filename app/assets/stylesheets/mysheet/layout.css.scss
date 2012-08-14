@@ -3,7 +3,7 @@
 }
 
 .upvote { 
-	border-color: transparent transparent rgba(#000,0.5) transparent;
+	border-color: transparent transparent rgba($headerColor, 0.7) transparent;
 	border-style: solid;
 	border-width: 0px 5px 10px 5px;
 	width: 0;
@@ -11,7 +11,7 @@
 }
 
 .downvote { 
-	border-color: rgba(#000,0.5) transparent transparent transparent;
+	border-color: rgba($headerColor, 0.7) transparent transparent transparent;
 	border-style: solid;
 	border-width: 10px 5px 0px 5px;
 	width: 0;
@@ -27,51 +27,51 @@
 		line-height: 16px;
 		background: lighten($mainColor, 55%); 
 		border: solid 1px lighten($mainColor, 50%);
-		box-shadow: 5px 5px 5px darken($mainColor, 25%);
+		box-shadow: 5px 5px 5px rgba(darken($mainColor, 25%), 0.5);
 		
 		&.active {
 			background: lighten($mainColor, 35%); 
 			border: solid 1px lighten($mainColor, 30%);
-			box-shadow: inset 3px 3px 3px darken($mainColor, 25%);
+			box-shadow: inset 3px 3px 3px rgba(darken($mainColor, 25%), 0.5);
 		}
 		
 		&.visited {
 			background: lighten($mainColor, 50%); 
 			border: solid 1px lighten($mainColor, 45%);
-			box-shadow: inset 3px 3px 3px darken($mainColor, 25%);
+			box-shadow: inset 3px 3px 3px rgba(darken($mainColor, 25%), 0.5);
 		}
 	}
 	&.topic {
-		background: lighten($successColor, 55%); 
-		border: solid 1px lighten($successColor, 50%);
-		box-shadow: 5px 5px 5px darken($successColor, 25%);
+		background: lighten($successColor, 60%); 
+		border: solid 1px lighten($successColor, 55%);
+		box-shadow: 5px 5px 5px rgba(darken($successColor, 25%), 0.5);
 		
 		&.active {
-			background: lighten($successColor, 35%); 
-			border: solid 1px lighten($successColor, 30%);
-			box-shadow: inset 3px 3px 3px darken($successColor, 25%);
+			background: lighten($successColor, 40%); 
+			border: solid 1px lighten($successColor, 35%);
+			box-shadow: inset 3px 3px 3px rgba(darken($successColor, 25%), 0.5);
 		}
 		
 		&.visited {
-			background: lighten($successColor, 50%); 
-			border: solid 1px lighten($successColor, 45%);
-			box-shadow: inset 3px 3px 3px darken($successColor, 25%);
+			background: lighten($successColor, 55%); 
+			border: solid 1px lighten($successColor, 50%);
+			box-shadow: inset 3px 3px 3px rgba(darken($successColor, 25%), 0.5);
 		}
 	}
 	&.misc {
 		height: 100%;
-		background: lighten($blendColor, 45%); 
-		border: solid 1px lighten($blendColor, 40%);
-		box-shadow: 5px 5px 5px darken($blendColor, 25%);
+		background: lighten($blendColor, 75%); 
+		border: solid 1px lighten($blendColor, 70%);
+		box-shadow: 5px 5px 5px rgba(darken($blendColor, 30%), 0.5);
 	}
 }
 
 .apanel {
-	background: lighten($blendColor, 50%); 
-	border: solid 1px lighten($blendColor, 45%); 
+	background: lighten($blendColor, 80%); 
+	border: solid 1px lighten($blendColor, 75%); 
 	margin: 0; 
 	padding: 0; 
-	box-shadow: 5px 5px 5px darken($blendColor, 25%);
+	box-shadow: 5px 5px 5px rgba(darken($blendColor, 30%), 0.5);
 	border-radius: $buttonRadius;
 	height: 100%;
 }
@@ -97,7 +97,6 @@ body {
 	position: absolute;
 	top: 0px;
 	left: 0; 
-	height: 5.5em;
 	background: rgba(#000, 0); 
 	cursor: pointer; 
 	display: inline-block; 
@@ -108,11 +107,25 @@ body {
 	padding: $btnBase ($btnBase * 2) ($btnBase + 1);  
 	margin-bottom: $btnBase;
 	@include border-radius($buttonRadius);
-	&:hover {
-		 background-color: rgba($mainColor, 0.25);
+	
+	&.topic {
+		height: 3em;
+		&:hover {
+			 background-color: rgba($successColor, 0.25);
+		}
+		&:active {
+			background-color: rgba(darken($successColor, 10%), 0.25);
+		}
 	}
-	&:active {
-		@include reverse-gradients(rgba(#000, 0.15));
+	
+	&.fact {
+		height: 5.5em;
+		&:hover {
+			background-color: rgba($mainColor, 0.25);
+		}
+		&:active {
+			background-color: rgba(darken($mainColor, 10%), 0.25);
+		}
 	}
 }
 
@@ -120,7 +133,6 @@ button.vote {
 	width: auto; 
 	background: lighten($mainColor, 50%); 
 	border: 1px solid lighten($mainColor, 45%); 
-	box-shadow: inset 0 1px 0 rgba(#fff, 0.5); 
 	color: #fff; 
 	cursor: pointer; 
 	display: inline-block;
@@ -150,6 +162,115 @@ button.vote {
 	}
 }
 
+.fusehead {
+	position: absolute; 
+	top: -1px; 
+	left: -1px; 
+	width: 1000px; 
+	background-color: $blendColor; 
+	height: 2.75em; 
+	border: solid 1px darken($blendColor, 10%); 
+	text-align: center; 
+	color: #fff;
+	@include gradients($blendColor);
+	box-shadow: 1px 1px 1px rgba(darken($blendColor, 30%), 0.5);
+}
+
+.headtext {
+	font-size: 18px; 
+	font-weight: bold; 
+	color: #fff; 
+	margin-top: 0.5em;
+}
+
+.downarrow { 
+	position: absolute;
+	top: 5px;
+	border-color: rgba(#fff,0.5) transparent transparent transparent;
+	border-style: solid;
+	border-width: 10px 5px 0px 5px;
+	width: 0;
+	height: 0;
+	
+	&.left {
+		left: 25px;
+	}
+	
+	&.right {
+		right: 25px;
+	}
+}
+
+.headleft {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 250px; 
+	text-align: center; 
+	color: #fff; 
+	font-size: 14px; 
+	font-weight: bold; 
+	margin-top: 0.6em;
+}
+
+.headright {
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	width: 250px; 
+	text-align: center; 
+	color: #fff; 
+	font-size: 14px; 
+	font-weight: bold; 
+	margin-top: 0.6em;
+}
+
+.arrow { 
+	border-style: solid;
+	width: 0;
+	height: 0;
+	&.right {
+		border-color: transparent transparent transparent rgba($headerColor, 0.7);
+		border-width: 10px 0px 10px 15px;
+	}
+	&.left {
+		border-color: transparent rgba($headerColor, 0.7) transparent transparent;
+		border-width: 10px 15px 10px 0px;
+	}
+}
+
+button.next {
+	width: auto; 
+	background: lighten($mainColor, 50%); 
+	border: 1px solid darken($mainColor, 5%); 
+	color: #fff; 
+	cursor: pointer; 
+	display: inline-block;
+	font-size: 10px; 
+	font-weight: bold; 
+	line-height: 1; 
+	margin: 0; 
+	outline: none; 
+	padding: 5px 8px 5px;
+	position: relative; 
+	text-align: center; 
+	text-decoration: none; 
+	margin-bottom: 0;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px rgba(darken($mainColor, 25%),0.5);
+	@include gradients($mainColor);
+	&:hover { 
+		border: 1px solid lighten($mainColor, 5%);
+		background-color: lighten(($mainColor), 10%); 
+		@include gradients(lighten($mainColor, 10%)) 
+	}
+	&:active { 
+		border: 1px solid darken($mainColor, 15%);
+		background-color: darken(($mainColor), 10%);
+		@include reverse-gradients(darken($mainColor, 10%));
+		box-shadow: 0 0 0 rgba(0,0,0,0.5);
+	}
+}
 
 
 

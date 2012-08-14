@@ -16,6 +16,7 @@
 	}
 	
 	&.content {
+		margin-top: 3.5em;
 		width: $screenWidth / 2;
 	}
 }
@@ -33,7 +34,7 @@
 			right: 0;
 		}
 		&.top {
-			top: 0;
+			top: 3.5em;
 		}
 		&.bottom {
 			bottom: 0;
@@ -45,8 +46,8 @@
 		overflow: hidden;
 		
 		&.top {
-			height: 85%;
-			top: 0;
+			height: 75%;
+			top: 3.5em;
 		}
 		&.bottom {
 			height: 15%;

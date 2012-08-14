@@ -7,7 +7,8 @@ Debacle.Views.TopicsCreate = Backbone.View.extend({
 		'click #create_topic' : 'createTopic',
 		'submit #new_topic' : 'submitTopic',
 		'click #plus_topic' : 'plusTopic',
-		'click #minus_topic' : 'minusTopic'
+		'click #minus_topic' : 'minusTopic',
+		'click #cancel' : 'cancel'
 	},
 	
 	render: function() {
@@ -74,5 +75,9 @@ Debacle.Views.TopicsCreate = Backbone.View.extend({
 		scorings.create({topic_id: topic.get('id'), vote: -1});
 		topics.setScore(topic, scorings);
 		this.renderRight();
+	},
+	
+	cancel: function() {
+		parent.history.back();
 	}
 });

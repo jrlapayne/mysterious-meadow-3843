@@ -84,8 +84,13 @@ Debacle.Views.TopicsShow = Backbone.View.extend({
 	plusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		var reason;
 		
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: 1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();
@@ -94,8 +99,13 @@ Debacle.Views.TopicsShow = Backbone.View.extend({
 	minusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		var reason;
 		
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: -1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();

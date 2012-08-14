@@ -2,12 +2,12 @@
 	<ul>
 		<% for (i = 0; i < reasons.length; i++) { %>
 			<% if (reason_id === reasons[i].get('id')) { %>
-				<div class = "mypanel reason active " id = "<%= 'reason' + i %>"style = "height: 5em; margin: 1em; position: relative">
+				<div class = "mypanel reason active " id = "<%= 'reason' + i %>"style = "height: 5em; margin: 1.1em; position: relative">
 			<% } else { %>
 				<% if (tasks.where({reason_id: reasons[i].get('id'), user_id: user.get('id')})[0]) { %>
-					<div class = "mypanel reason visited" style = "height: 5em; margin: 1em; position: relative">
+					<div class = "mypanel reason visited" style = "height: 5em; margin: 1.1em; position: relative">
 				<% } else { %>
-					<div class = "mypanel reason" style = "height: 5em; margin: 1em; position: relative">
+					<div class = "mypanel reason" style = "height: 5em; margin: 1.1em; position: relative">
 				<% } %>
 			<% } %>
 				<div class = "" style = "position: absolute; top: 0; left: 0; width: 2em; text-align: center">
@@ -20,7 +20,7 @@
 					<button class = "vote" style = "margin-bottom: 2px" id = "minus_reason" value = "<%= reasons[i].get('id') %>"><div class = "downvote"></div></button>
 				</div>
 				<div class = "" style = "position: absolute; top: 2px; right: 0; margin: 0 auto; width: 85%; height: 100%; font-size: 14px; overflow: hidden">
-					<button class = "invisible-butt" id = "reason" value = "<%= reasons[i].get('id') %>" style = "margin-top: 0em"></button>
+					<button class = "invisible-butt fact" id = "reason" value = "<%= reasons[i].get('id') %>" style = "margin-top: 0em"></button>
 					<%= reasons[i].get('title') %>
 				</div>
 			</div>

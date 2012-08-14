@@ -11,7 +11,9 @@ Debacle.Views.ReasonsShow = Backbone.View.extend({
 		'click #minus_topic' : 'minusTopic',
 		'click #plus_reason' : 'plusReason',
 		'click #minus_reason' : 'minusReason',
-		'click #edit_reason' : 'editReason'
+		'click #edit_reason' : 'editReason',
+		'click #prev_reason' : 'prevReason',
+		'click #next_reason' : 'nextReason'
 	},
 	
 	render: function() {
@@ -90,8 +92,13 @@ Debacle.Views.ReasonsShow = Backbone.View.extend({
 	plusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		var reason;
 		
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: 1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();
@@ -100,8 +107,13 @@ Debacle.Views.ReasonsShow = Backbone.View.extend({
 	minusReason: function(e) {
 		var scorings = this.options.scorings;
 		var reasons = this.options.reasons;
-		var reason = reasons.where({id: parseInt($(e.target).val())})[0];
-		
+		var reason;
+
+		if (isNaN(parseInt($(e.target).val()))) {
+			reason = reasons.where({id: parseInt($(e.target).parent().val())})[0];
+		} else {
+			reason = reasons.where({id: parseInt($(e.target).val())})[0];
+		}
 		scorings.create({reason_id: reason.get('id'), vote: -1});
 		reasons.setScore(reason, scorings);
 		this.renderLeft();
@@ -115,5 +127,39 @@ Debacle.Views.ReasonsShow = Backbone.View.extend({
 	
 	editReason: function() {
 		Backbone.history.navigate('reason/edit/' + this.options.reason.get('id'), true);
+	},
+	
+	prevReason: function() {
+		var reason = this.options.reason;
+		var reasons = this.options.reasons.where({topic_id: reason.get('topic_id')});
+		var prev_reason;
+		
+		for (i = 0; i < reasons.length; i++) {
+			if (reason.get('id') === reasons[i].get('id')) {
+				if (i === 0) {
+					prev_reason = reasons[reasons.length - 1];
+				} else {
+					prev_reason = reasons[i - 1];
+				}
+			}
+		}
+		Backbone.history.navigate('reason/' + prev_reason.get('id'), true);
+	},
+	
+	nextReason: function() {
+		var reason = this.options.reason;
+		var reasons = this.options.reasons.where({topic_id: reason.get('topic_id')});
+		var next_reason;
+		
+		for (i = 0; i < reasons.length; i++) {
+			if (reason.get('id') === reasons[i].get('id')) {
+				if (i === reasons.length - 1) {
+					next_reason = reasons[0];
+				} else {
+					next_reason = reasons[i + 1];
+				}
+			}
+		}
+		Backbone.history.navigate('reason/' + next_reason.get('id'), true);
 	}
 });

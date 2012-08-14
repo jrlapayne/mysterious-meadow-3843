@@ -1,3 +1,7 @@
+<div class = "fusehead">
+	<div class = "headtext">fuseGap</div>
+	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
+</div>
 <div class = "sidebar at left top">
 	<div class = "sidebar wrapper top">
 		<div id = "left" class = " mousescroll sidebar"></div>
@@ -5,7 +9,7 @@
 </div>
 <div class = "page content">
 	<div class = "mypanel misc">
-		<form id = "edit_topic">
+		<form id = "edit_topic" style = "margin-bottom: 0">
 			<label>Title:</label>
 			<input type = "text" id = "topic_title" value = "<%= topic.get('title') %>" maxlength = "40">
 			<label>Description:</label>
@@ -14,6 +18,9 @@
 				<input class = "blend button radius" type = "submit" value = "Update Topic">
 			</div>
 		</form>
+		<div style = "text-align: center">
+			<button class = "blend button radius" id = "cancel" style = "width: 32%">Cancel</button>
+		</div>
 	</div>
 </div>
 <div class = "sidebar at right top">

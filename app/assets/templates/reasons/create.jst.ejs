@@ -1,3 +1,8 @@
+<div class = "fusehead">
+	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
+	<div class = "headtext">fuseGap</div>
+	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
+</div>
 <div class = "sidebar at left top">
 	<div class = "sidebar wrapper top">
 		<div id = "left" class = " mousescroll sidebar"></div>
@@ -5,14 +10,14 @@
 </div>
 <div class = "sidebar at left bottom">
 	<div class = " sidebar wrapper bottom" style = "text-align: center">
-		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Reason +</button>
+		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Fact +</button>
 	</div>
 </div>
 <div class = "page content">
 	<div class = "mypanel misc">
 		<%= topic.get('title') %></br>
 		<%= topic.get('description') %></br>
-		<form id = "new_reason">
+		<form id = "new_reason" style = "margin-bottom: 0">
 			<label>Title:</label>
 			<input type = "text" id = "new_reason_title">
 			<label>Description:</label>
@@ -24,9 +29,12 @@
 			<label>Source Url 3:</label>
 			<input type = "text" id = "new_reason_url3">
 			<div style = "text-align: center">
-				<input class = "blend button radius" type = "submit" value = "Create Reason">
+				<input class = "blend button radius" type = "submit" value = "Create Fact">
 			</div>
 		</form>
+		<div style = "text-align: center">
+			<button class = "blend button radius" id = "cancel" style = "width: 29%">Cancel</button>
+		</div>
 	</div>
 </div>
 <div class = "sidebar at right top">
