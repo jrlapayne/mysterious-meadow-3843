@@ -28,11 +28,13 @@
 		background: lighten($mainColor, 55%); 
 		border: solid 1px lighten($mainColor, 50%);
 		box-shadow: 5px 5px 5px rgba(darken($mainColor, 25%), 0.5);
+		color: #5B757F;
 		
 		&.active {
 			background: lighten($mainColor, 35%); 
 			border: solid 1px lighten($mainColor, 30%);
 			box-shadow: inset 3px 3px 3px rgba(darken($mainColor, 25%), 0.5);
+			color: #333333;
 		}
 		
 		&.visited {
@@ -45,11 +47,13 @@
 		background: lighten($successColor, 60%); 
 		border: solid 1px lighten($successColor, 55%);
 		box-shadow: 5px 5px 5px rgba(darken($successColor, 25%), 0.5);
+		color: #664C47;
 		
 		&.active {
 			background: lighten($successColor, 40%); 
 			border: solid 1px lighten($successColor, 35%);
 			box-shadow: inset 3px 3px 3px rgba(darken($successColor, 25%), 0.5);
+			color: #333333;
 		}
 		
 		&.visited {
@@ -270,6 +274,10 @@ button.next {
 		@include reverse-gradients(darken($mainColor, 10%));
 		box-shadow: 0 0 0 rgba(0,0,0,0.5);
 	}
+}
+
+.lighttext {
+	color: #485E66;
 }
 
 

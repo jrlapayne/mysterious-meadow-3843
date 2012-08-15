@@ -9,12 +9,17 @@
 				<div style = "position: absolute; top: 0; left: 0; width: 100%; text-align:center">
 					<div style = "font-size: 1.5em; margin-top: 0.5em">
 						<button class = "invisible-butt topic" id = "topic" value = "<%= t.get('id') %>" style = "margin-top: 1em"></button>
-						<u><span style = "font-size: 18px"><%= t.get('title') %></span></u>
+						<span style = "font-size: 18px; font-weight: bold"><%= t.get('title') %></span>
 					</div>
 				</div>
 				<div style = "text-align: center">
 					<div style = "margin-top: 25px">
-					<img src = "assets/weed.svg.png" width = "40px" height = "40px"/>
+						<% if (t.get('id') === 1) { %>
+							<img src = "assets/weed.svg.png" width = "40px" height = "40px"/>
+						<% } %>
+						<% if (t.get('id') === 2) { %>
+							<img src = "assets/drone.jpeg" width = "60px" height = "50px"/>
+						<% } %>
 					</div>
 				</div>
 				<div style = "position: absolute; bottom: 2em; left: 0; width: 100%; text-align:center">
