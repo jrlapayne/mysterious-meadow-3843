@@ -1,4 +1,4 @@
-<div class = "fusehead">
+<div class = "header">
 	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
 	<div class = "headtext">fuseGap</div>
 	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
@@ -9,17 +9,17 @@
 	</div>
 </div>
 <div class = "sidebar at left bottom">
-	<div class = " sidebar wrapper bottom" style = "text-align: center">
-		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Fact +</button>
+	<div class = " sidebar wrapper bottom">
+		<button class = "button fact-one size-four" id = "create_reason">+ Add Fact +</button>
 	</div>
 </div>
 <div class = "page content">
-	<div class = "mypanel misc">
+	<div class = "panel misc">
 		<form id = "edit_reason" style = "margin-bottom: 0">
 			<label>Title:</label>
-			<input type = "text" id = "reason_title" value = "<%= reason.get('title') %>">
+			<textarea id = "reason_title"><%= reason.get('title') %></textarea>
 			<label>Description:</label>
-			<input type = "text" id = "reason_description" value = "<%= reason.get('description') %>">
+			<textarea rows = "4" id = "reason_description"><%= reason.get('description') %></textarea>
 			<label>Source Url 1:</label>
 			<input type = "text" id = "reason_url1" value = "<%= reason.get('url1') %>">
 			<label>Source Url 2:</label>
@@ -27,11 +27,11 @@
 			<label>Source Url 3:</label>
 			<input type = "text" id = "reason_url3" value = "<%= reason.get('url3') %>">
 			<div style = "text-align: center">
-				<input class = "blend button radius" type = "submit" value = "Update Fact">
+				<input class = "button misc-one size-four" type = "submit" value = "Update Fact">
 			</div>
 		</form>
 		<div style = "text-align: center">
-			<button class = "blend button radius" id = "cancel" style = "width: 30%">Cancel</button>
+			<button class = "button misc-one size-four" id = "cancel">Cancel</button>
 		</div>
 	</div>
 </div>
@@ -42,6 +42,6 @@
 </div>
 <div class = "sidebar at right bottom">
 	<div class = "sidebar wrapper bottom" style = "text-align: center">
-		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
 	</div>
 </div>

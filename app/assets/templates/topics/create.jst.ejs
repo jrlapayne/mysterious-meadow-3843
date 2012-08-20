@@ -1,4 +1,4 @@
-<div class = "fusehead">
+<div class = "header">
 	<div class = "headtext">fuseGap</div>
 	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
 </div>
@@ -8,18 +8,18 @@
 	</div>
 </div>
 <div class = "page content">
-	<div class = "mypanel misc">
+	<div class = "panel misc">
 		<form id = "new_topic" style = "margin-bottom: 0">
 			<label>Title:</label>
 			<input type = "text" id = "new_topic_title" maxlength = "40">
 			<label>Description:</label>
-			<input type = "text" id = "new_topic_description">
+			<textarea rows = "4" id = "new_topic_description"/>
 			<div style = "text-align: center">
-				<input class = "blend button radius" type = "submit" value = "Create Topic">
+				<input class = "button misc-one size-four" type = "submit" value = "Create Topic">
 			</div>
 		</form>
 		<div style = "text-align: center">
-			<button class = "blend button radius" id = "cancel" style = "width: 31%">Cancel</button>
+			<button class = "button misc-one size-four" id = "cancel">Cancel</button>
 		</div>
 	</div>
 </div>
@@ -29,7 +29,7 @@
 	</div>
 </div>
 <div class = "sidebar at right bottom">
-	<div class = "sidebar wrapper bottom" style = "text-align: center">
-		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+	<div class = "sidebar wrapper bottom">
+		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
 	</div>
 </div>

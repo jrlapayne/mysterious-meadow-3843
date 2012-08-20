@@ -22,11 +22,11 @@
 		
 		$(document).ready(function() {
 			var docheight = $(document).height();
-			$('#page').height(docheight - 10);
+			$('#page').height(docheight - (docheight / 50));
 		});
 		$(window).resize(function() {
 			var docheight = $(document).height();
-			$('#page').height(docheight - 10);
+			$('#page').height(docheight - (docheight / 50));
 		})
 	</script>
 </head>

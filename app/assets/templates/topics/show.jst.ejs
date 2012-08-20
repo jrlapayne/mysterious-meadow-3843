@@ -1,4 +1,4 @@
-<div class = "fusehead">
+<div class = "header">
 	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
 	<div class = "headtext">fuseGap</div>
 	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
@@ -9,16 +9,16 @@
 	</div>
 </div>
 <div class = "sidebar at left bottom">
-	<div class = " sidebar wrapper bottom" style = "text-align: center">
-		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Fact +</button>
+	<div class = " sidebar wrapper bottom">
+		<button class = "button fact-one size-four" id = "create_reason">+ Add Fact +</button>
 	</div>
 </div>
 <div class = " page content">
-	<div class = "mypanel topic" style = "height: 100%; color: #333333">
+	<div class = "panel misc">
 		<%= topic.get('title') %></br>
 		<%= topic.get('description') %></br>
 		<div style = "width: 100%; text-align: center">
-			<button class = "success button radius" id = "edit_topic" style = "width: 40%; margin-top: 1em">Edit Topic</button>
+			<button class = "button topic-one size-four" id = "edit_topic">Edit Topic</button>
 		</div>
 	</div>
 </div>
@@ -28,7 +28,7 @@
 	</div>
 </div>
 <div class = "sidebar at right bottom">
-	<div class = "sidebar wrapper bottom" style = "text-align: center">
-		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+	<div class = "sidebar wrapper bottom">
+		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
 	</div>
 </div>

@@ -1,0 +1,17 @@
+@function getColor($baseColor, $multiple) {
+	@if $multiple == 1 {
+		@return desaturate(lighten($baseColor, 26%), 35%);
+	} @else if $multiple == 2 {
+		@return desaturate(lighten($baseColor, 37%), 58%);
+	} @else if $multiple == 3 {
+		@return desaturate(lighten($baseColor, 76%), 70%);
+	} @else if $multiple == 4 {
+		@return desaturate(lighten($baseColor, 89%), 75%);
+	} @else {
+		@return $baseColor;
+	}
+}
+
+@function getFontSize($multiple) {
+	@return ($multiple * $ratio) + $baseFontSize;
+}

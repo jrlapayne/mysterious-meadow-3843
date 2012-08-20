@@ -1,20 +1,20 @@
-<div class = "fusehead">
+<div class = "header">
 	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
 	<div class = "headtext">fuseGap</div>
 	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
 </div>
 <div class = "sidebar at left top">
 	<div class = "sidebar wrapper top">
-		<div id = "left" class = " mousescroll sidebar"></div>
+		<div id = "left" class = "mousescroll sidebar"></div>
 	</div>
 </div>
-<div class = "sidebar at left bottom">
-	<div class = " sidebar wrapper bottom" style = "text-align: center">
-		<button class = "primary button radius" id = "create_reason" style = "width: 80%; margin-top: 1em">+ Add Fact +</button>
+<div class = " sidebar at left bottom">
+	<div class = "sidebar wrapper bottom">
+		<button class = "button fact-one size-four" id = "create_reason">+ Add Fact +</button>
 	</div>
 </div>
 <div class = "page content">
-	<div class = "mypanel reason" style = "height: 100%; color: #333333">
+	<div class = "panel fact main">
 		<b><span style = "font-size: 20px"><%= reason.get('title') %></b></br>
 		<%= reason.get('description') %></span></br></br>
 		<div style = "overflow: hidden">
@@ -23,23 +23,23 @@
 			<a href = "<%= reason.get('url3') %>" style = "font-size: 12px" target = "_blank"><u><%= reason.get('url3') %></u></a></br></br>
 		</div>
 		<div style = "width: 100%; text-align: center">
-			<button class = "primary button radius" id = "edit_reason" style = "width: 40%; margin-top: 1em">Edit Fact</button>
+			<button class = " button fact-one size-four" id = "edit_reason">Edit Fact</button>
 		</div>
-		<button id = "prev_reason" class = "next" style = "position: absolute; left: 50px; bottom: 32px">
-			<div id = "prev_reason" class = "arrow left"/>
+		<button id = "prev_reason" class = "next left">
+			<div id = "prev_reason" />
 		</button>
-		<button id = "next_reason" class = "next" style = "position: absolute; right: 50px; bottom: 32px">
-			<div id = "next_reason" class = "arrow right"/>
+		<button id = "next_reason" class = "next right">
+			<div id = "next_reason" />
 		</button>
 	</div>
 </div>
-<div class = "sidebar at right top">
+<div class = " sidebar at right top">
 	<div class = "sidebar wrapper top">
-		<div id = "right" class = " mousescroll sidebar"></div>
+		<div id = "right" class = "  mousescroll sidebar"></div>
 	</div>
 </div>
-<div class = "sidebar at right bottom">
-	<div class = "sidebar wrapper bottom" style = "text-align: center">
-		<button class = "success button radius" id = "create_topic" style = "width: 80%; margin-top: 1em">+ Add Topic +</button>
+<div class = " sidebar at right bottom">
+	<div class = " sidebar wrapper bottom">
+		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
 	</div>
 </div>

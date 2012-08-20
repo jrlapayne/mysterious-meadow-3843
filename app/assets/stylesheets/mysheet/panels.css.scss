@@ -1,0 +1,47 @@
+div.panel {
+	@include panel ($miscColor);
+	
+	&.fact {
+		@include panel($factColor);
+		margin: 10px 0px;
+		margin-top: $headerHeight + $sidebarMargin;
+		padding: 15px;
+		&.sidebar {
+			line-height: 16px;
+			margin: $sidebarMargin $sidebarMargin + 4;
+			padding: 5px;
+			position: relative;
+			height: $factHeight;
+			width: auto;
+		}
+		&.main {
+			color: mix($textColor, $factColor);
+		}
+	}
+	
+	&.topic {
+		@include panel($topicColor);
+		margin: 10px 0px;
+		margin-top: $headerHeight + $sidebarMargin;
+		padding: 15px;
+		&.sidebar {
+			margin: $sidebarMargin $sidebarMargin + 4;
+			padding: 10px;
+			position: relative;
+			height: $topicHeight;
+			width: auto;
+		}
+		&.main {
+			color: mix($textColor, $topicColor);
+		}
+	}
+		
+	&.misc {
+		margin: 0 auto;
+		margin-top: $headerHeight + $sidebarMargin;
+		padding: 0;
+		background: getColor($miscColor, 3);
+		border: solid 1px darken(getColor($miscColor, 3), 5%);
+		color: mix($textColor, $miscColor);
+	}
+}
