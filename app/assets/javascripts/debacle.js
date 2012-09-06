@@ -46,18 +46,18 @@ window.Debacle = {
 	
 	preLoad: function() {
 		for(i = 0; i < 16; i++) {
-			$('<img />').attr('src', '/assets/win' + String(i + 1) + '.png');
+			$('<img />').attr('src', 'assets/win' + String(i + 1) + '.png');
 		}
 		for(i = 0; i < 23; i++) {
-			$('<img />').attr('src', '/assets/fail' + String(i + 1) + '.png');
+			$('<img />').attr('src', 'assets/fail' + String(i + 1) + '.png');
 		}
 		this.reasons.each(function(r) {
 			if (r.get('url')) {
 				$('<img />').attr('src', r.get('url'));
 			}
 		});
-		$('<img />').attr('src', '/assets/front_page2.png');
-		$('<img />').attr('src', '/assets/fusegap.png');
-		$('<img />').attr('src', '/assets/fusegap_white.png');
+		$('<img />').attr('src', 'assets/front_page2.png');
+		$('<img />').attr('src', 'assets/fusegap.png');
+		$('<img />').attr('src', 'assets/fusegap_white.png');
 	}
 };
