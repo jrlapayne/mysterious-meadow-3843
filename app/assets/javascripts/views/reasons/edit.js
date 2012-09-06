@@ -55,19 +55,19 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 	},
 	
 	topicShow: function(e) {
-		Backbone.history.navigate('topic/' + $(e.target).val(), true);
+		Backbone.history.navigate('topic' + $(e.target).val(), true);
 	},
 	
 	reasonShow: function(e) {
-		Backbone.history.navigate('reason/' + $(e.target).val(), true)
+		Backbone.history.navigate('fact' + $(e.target).val(), true)
 	},
 	
 	createTopic: function() {
-		Backbone.history.navigate('topics/new', true);
+		Backbone.history.navigate('topic/create', true);
 	},
 	
 	createReason: function() {
-		Backbone.history.navigate('reasons/new/' + this.options.topic.get('id'), true);
+		Backbone.history.navigate('fact' + this.options.topic.get('id') + '/create', true);
 	},
 	
 	submitReason: function(e) {
@@ -83,7 +83,7 @@ Debacle.Views.ReasonsEdit = Backbone.View.extend({
 		};
 		edit_reason.set(attributes);
 		edit_reason.save();
-		Backbone.history.navigate('reason/' + edit_reason.get('id'), true);
+		Backbone.history.navigate('fact' + edit_reason.get('id') + '/edit', true);
 	},
 	
 	plusTopic: function(e) {

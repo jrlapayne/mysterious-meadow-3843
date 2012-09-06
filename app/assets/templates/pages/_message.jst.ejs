@@ -1,0 +1,20 @@
+<% if (!topic) { %>
+	<div class = "global-level-title">
+		fuseGap: <span class = "green-text">Level <%= user.get('level') %>!</span>
+	</div>
+<% } else { %>
+	<div class = "topic-level-title">
+		<%= topic.get('title') %>:</br>
+		<span class = "blue-text">Tier <%= tu_lvls.where({user_id: user.get('id'), topic_id: topic.get('id')})[0].get('level') %>!</span>
+	</div>
+<% } %>
+<div class = "rage-image">
+	<% var num = Math.floor(Math.random() * 16); %>
+	<img src = '/assets/win<%= num + 1 %>.png' width = "100px" />
+</div>
+<div class = "votes-gained">
+	Votes Gained: <span class = "green-text"><%= "+ " + (2 * user.get('level')) %></span>
+	<div class = "small-text-sub">
+		(use your votes to upvote<span class = "period-spacing">/</span>downvote facts)
+	</div>
+</div>

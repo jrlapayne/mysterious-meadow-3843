@@ -32,11 +32,11 @@ Debacle.Views.TopicsCreate = Backbone.View.extend({
 	},
 	
 	topicShow: function(e) {
-		Backbone.history.navigate('topic/' + $(e.target).val(), true);
+		Backbone.history.navigate('topic' + $(e.target).val(), true);
 	},
 	
 	createTopic: function() {
-		Backbone.history.navigate('topics/new', true);
+		Backbone.history.navigate('topic/create', true);
 	},
 	
 	submitTopic: function(e) {
@@ -49,7 +49,7 @@ Debacle.Views.TopicsCreate = Backbone.View.extend({
 		new_topic = this.options.topics.create(attributes, {
 			wait: true, 
 			success: function() {
-				Backbone.history.navigate('topic/' + new_topic.get('id'), true);
+				Backbone.history.navigate('topic' + new_topic.get('id'), true);
 			},
 			error: function() {
 				alert('invalid content');

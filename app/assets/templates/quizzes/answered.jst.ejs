@@ -1,0 +1,39 @@
+<% if (is_correct) { %>
+	<p class="correct-text">Correct!</p>
+	Your answer: <%= quiz.get('correct') %>
+	<div class = "rage-comic">
+		<% var win_num = Math.floor(Math.random() * 16); %>
+		<img src = '/assets/win<%= win_num + 1 %>.png' height = "100px" />
+	</div>
+	<div class = "small-text">
+		<b>Source:</b><span class = "link"><%= quiz.get('url1') %></span>
+		</br>
+		<% if (quiz.get('url2') && quiz.get('url2') !== "") { %>
+			<b>Source:</b><span class = "link"><%= quiz.get('url2') %></span>
+			</br>
+		<% } %>
+		<% if (quiz.get('url3') && quiz.get('url3') !== "") { %>
+			<b>Source:</b><span class = "link"><%= quiz.get('url3') %></span>
+			</br>
+		<% } %>
+	</div>
+<% } else { %>
+	<p class="incorrect-text">Wrong!</p>
+	Correct answer: <%= quiz.get('correct') %>
+	<div class = "rage-comic">
+		<% var fail_num = Math.floor(Math.random() * 23); %>
+		<img src = '/assets/fail<%= fail_num + 1 %>.png' height = "100px" />
+	</div>
+	<div class = "small-text">
+		<b>Source:</b><span class = "link"><%= quiz.get('url1') %></span>
+		</br>
+		<% if (quiz.get('url2') && quiz.get('url2') !== "") { %>
+			<b>Source:</b><span class = "link"><%= quiz.get('url2') %></span>
+			</br>
+		<% } %>
+		<% if (quiz.get('url3') && quiz.get('url3') !== "") { %>
+			<b>Source:</b><span class = "link"><%= quiz.get('url3') %></span>
+			</br>
+		<% } %>
+	</div>
+<% } %>

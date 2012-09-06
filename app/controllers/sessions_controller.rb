@@ -1,13 +1,10 @@
 class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    user.token = auth["credentials"]["token"];
-    if (user.is_temp_user)
-      user.is_temp_user = false
-    end
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth, current_user)
+    user.token = auth["credentials"]["token"]
     user.save
+    session[:user_id] = user.id
     redirect_to root_url
   end
   

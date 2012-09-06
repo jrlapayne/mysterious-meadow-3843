@@ -1,34 +1,34 @@
-<div class = "header">
-	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
-	<div class = "headtext">fuseGap</div>
-	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
-</div>
-<div class = "sidebar at left top">
-	<div class = "  sidebar wrapper top">
-		<div id = "left" class = " mousescroll sidebar"></div>
+<li value = "<%= topic.get('id') %>" style = "display:none" />
+<div id = "inactive" class = "">
+	<div class = "arrow-container">
+		<div class = "topic-arrow"></div>
+	</div>
+	<div class = "bold-text">
+		<%= topic.get('title') %>
+	</div>
+	<div class = "show-more-topic-text">
+		....
+	</div>
+	<div class = "show-facts-text">
+		<span class="footer-text-span">Facts (</span><%= reasons.where({topic_id: topic.get('id')}).length %><span class="footer-text-span">)</span>
 	</div>
 </div>
-<div class = "sidebar at left bottom">
-	<div class = " sidebar wrapper bottom">
-		<button class = "button fact-one size-four" id = "create_reason">+ Add Fact +</button>
+<div id = "active" class ="hide">
+	<div class = "arrow-container">
+		<div class = "topic-arrow"></div>
 	</div>
-</div>
-<div class = " page content">
-	<div class = "panel misc">
-		<%= topic.get('title') %></br>
-		<%= topic.get('description') %></br>
-		<div style = "width: 100%; text-align: center">
-			<button class = "button topic-one size-four" id = "edit_topic">Edit Topic</button>
+	<div class = "bold-text">
+		<%= topic.get('title') %>
+	</div>
+	<div id = "xp_bar">
+		
+	</div>
+	<div class = "active-topic-footer">
+		<div class = "show-active-topic-text">
+			<span class="footer-text-span-facts">Facts:</span> 
+			<span class="footer-text-span-intro-before"> Intro (</span><%= reasons.where({topic_id: topic.get('id'), is_intro: true}).length %><span class="footer-text-span-intro-after">)</span>
+			<span class="footer-text-span">Pro (</span><%= reasons.where({topic_id: topic.get('id'), is_pro: true}).length %><span class="footer-text-span-pro-after">)</span>
+			<span class="footer-text-span">Con (</span><%= reasons.where({topic_id: topic.get('id'), is_pro: false}).length %><span class="footer-text-span">)</span>
 		</div>
-	</div>
-</div>
-<div class = "sidebar at right top">
-	<div class = "sidebar wrapper top">
-		<div id = "right" class = " mousescroll sidebar"></div>
-	</div>
-</div>
-<div class = "sidebar at right bottom">
-	<div class = "sidebar wrapper bottom">
-		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
 	</div>
 </div>

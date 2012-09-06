@@ -1,45 +1,86 @@
-<div class = "header">
-	<div class = "headleft"><div class = "downarrow left" />Facts<div class = "downarrow right" /></div>
-	<div class = "headtext">fuseGap</div>
-	<div class = "headright"><div class = "downarrow left" />Topics<div class = "downarrow right" /></div>
-</div>
-<div class = "sidebar at left top">
-	<div class = "sidebar wrapper top">
-		<div id = "left" class = "mousescroll sidebar"></div>
+<li value = "<%= reason.get('id') %>" style = "display: none" />
+<div id = "inactive" class = "">
+	<div class = "thumbnail">
+		<% if (reason.get('url')) { %>
+			<img src = "<%= reason.get('url') %>" width="50">
+		<% } else { %>
+			<img src = "assets/fusegap.png" width="50">
+		<% } %>
 	</div>
-</div>
-<div class = " sidebar at left bottom">
-	<div class = "sidebar wrapper bottom">
-		<button class = "button fact-one size-four" id = "create_reason">+ Add Fact +</button>
-	</div>
-</div>
-<div class = "page content">
-	<div class = "panel fact main">
-		<b><span style = "font-size: 20px"><%= reason.get('title') %></b></br>
-		<%= reason.get('description') %></span></br></br>
-		<div style = "overflow: hidden">
-			<a href = "<%= reason.get('url1') %>" style = "font-size: 12px" target = "_blank"><u><%= reason.get('url1') %></u></a></br></br>
-			<a href = "<%= reason.get('url2') %>" style = "font-size: 12px" target = "_blank"><u><%= reason.get('url2') %></u></a></br></br>
-			<a href = "<%= reason.get('url3') %>" style = "font-size: 12px" target = "_blank"><u><%= reason.get('url3') %></u></a></br></br>
+	<div class = "sum">
+		<div class = "small-text">
+			<% if (sum >= 0) { %>
+				<%= "+" + sum %>
+			<% } else { %>
+				<%= sum %>
+			<% } %>
 		</div>
-		<div style = "width: 100%; text-align: center">
-			<button class = " button fact-one size-four" id = "edit_reason">Edit Fact</button>
+	</div>
+	<div class = "title">
+		<b><%= reason.get('title').split(' ')[0] %></b><%= " " + reason.get('title').substr(reason.get('title').indexOf(" ") + 1) %>
+		</br></br>
+	</div>
+	<div class = "show-more">
+		more ...
+	</div>
+	<div class = "stats">				
+		0
+		<img src= http://www.boingboing.net/filesroot/_01Independent-Projects_03Speech-Bubbles_Bubble.jpg height="15" width = "20">
+	</div>
+</div>
+
+<div id = "active" class = "hide">
+	<div class = "active-panel-thumbnail">
+		<% if (reason.get('url')) { %>
+			<img src = "<%= reason.get('url') %>" width="50">
+		<% } else { %>
+			<img src = "assets/fusegap.png" width="50">
+		<% } %>
+	</div>
+	<div class = "sum">
+		<div class = "small-text">
+			<% if (sum >= 0) { %>
+				<%= "+" + sum %>
+			<% } else { %>
+				<%= sum %>
+			<% } %>
 		</div>
-		<button id = "prev_reason" class = "next left">
-			<div id = "prev_reason" />
-		</button>
-		<button id = "next_reason" class = "next right">
-			<div id = "next_reason" />
-		</button>
 	</div>
-</div>
-<div class = " sidebar at right top">
-	<div class = "sidebar wrapper top">
-		<div id = "right" class = "  mousescroll sidebar"></div>
+	<div class = "title">
+		<b><%= reason.get('title') %></b>
 	</div>
-</div>
-<div class = " sidebar at right bottom">
-	<div class = " sidebar wrapper bottom">
-		<button class = "button topic-one size-four" id = "create_topic">+ Add Topic +</button>
+	<div class = "description">
+		<%= reason.get('description') %>
+		</br></br>
+	</div>
+	<div class = "small-text">
+		<b>Source:</b><span class = "link"><%= reason.get('url1') %></span>
+		</br></br>
+	</div>
+	<% if (reason.get('url2')) { %>
+		<div class = "small-text">
+			<b>Source:</b><span class = "link"><%= reason.get('url2') %></span>
+			</br></br>
+		</div>
+	<% } %>
+	<% if (reason.get('url3')) { %>
+		<div class = "small-text">
+			<b>Source:</b><span class = "link"><%= reason.get('url3') %></span>
+			</br></br>
+		</div>
+	<% } %>
+	<div class = "data-panel">
+		<div class = "vote-text">Vote:</div> 
+		<div style = "margin-left: 210px">				
+			<div id = "upvote" class = "vote-button upvote-button">
+				<div class = "vote-button-text">+</div>
+			</div>
+			<div id = "downvote" class = "vote-button downvote-button">
+				<div class = "vote-button-text">&#8212;</div>
+			</div>
+		</div>
+		<div class = "show-comments-text">
+			<span class="footer-text-span">Comments (</span>0<span class="footer-text-span">)</span>
+		</div>
 	</div>
 </div>

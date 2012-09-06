@@ -1,0 +1,39 @@
+<li value = "<%= quiz.get('id') %>" style = "display: none" />
+<div id = "inactive" class = "">
+	<div class = "thumbnail">
+		<% if (quiz.get('url')) { %>
+			<img src = "<%= quiz.get('url') %>" width="50">
+		<% } else { %>
+			<img src = "assets/fusegap.png" width="50">
+		<% } %>
+	</div>
+	<div class = "sum" id = "icon_loc">
+		<% if (icon === 'ques') { %>
+			<div class = "questionmark-text">?</div>
+		<% } else if (icon === 'check') { %>
+			<div class = "checkmark-text">&#x2713;</div>
+		<% } else { %>
+			<div class = "x-text">&#x2717;</div>
+		<% } %>
+	</div>
+	<div class = "title">
+		<b><%= quiz.get('question').split(' ')[0] %></b><%= " " + quiz.get('question').substr(quiz.get('question').indexOf(" ") + 1) %>
+		</br></br></br>
+	</div>
+	<div class = "show-more">
+		answer question ...
+	</div>
+</div>
+<div id = "active" class = "hide">
+	<div class = "question-thumbnail">
+		<% if (quiz.get('url')) { %>
+			<img src = "<%= quiz.get('url') %>" width="50">
+		<% } else { %>
+			<img src = "assets/fusegap.png" width="50">
+		<% } %>
+	</div>
+	<div class = "title">
+		<b><%= quiz.get('question') %></b>
+	</div>
+	<div id = "answers" class = "data-panel"></div>
+</div>

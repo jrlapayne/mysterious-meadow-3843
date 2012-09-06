@@ -1,5 +1,8 @@
 Debacle::Application.routes.draw do
   
+  resources :topic_user_levels
+  resources :topic_levels
+  resources :global_levels
   resources :scorings
   resources :tasks
   resources :users
@@ -7,6 +10,7 @@ Debacle::Application.routes.draw do
   resources :topics
 
   root to: 'pages#main'
+  
   match '/auth/:provider/callback' => 'sessions#create'
   match '/signout' => 'sessions#destroy'
   

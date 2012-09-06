@@ -32,11 +32,11 @@ Debacle.Views.TopicsEdit = Backbone.View.extend({
 	},
 	
 	topicShow: function(e) {
-		Backbone.history.navigate('topic/' + $(e.target).val(), true);
+		Backbone.history.navigate('topic' + $(e.target).val(), true);
 	},
 	
 	createTopic: function() {
-		Backbone.history.navigate('topics/new', true);
+		Backbone.history.navigate('topic/create', true);
 	},
 	
 	submitTopic: function(e) {
@@ -49,7 +49,7 @@ Debacle.Views.TopicsEdit = Backbone.View.extend({
 		};
 		edit_topic.set(attributes);
 		edit_topic.save();
-		Backbone.history.navigate('topic/' + edit_topic.get('id'), true);
+		Backbone.history.navigate('topic' + edit_topic.get('id'), true);
 	},
 	
 	plusTopic: function(e) {

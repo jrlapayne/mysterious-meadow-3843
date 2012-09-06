@@ -11,46 +11,81 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813211044) do
+ActiveRecord::Schema.define(:version => 20120904213732) do
+
+  create_table "global_levels", :force => true do |t|
+    t.integer  "level"
+    t.integer  "xp_req"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "reasons", :force => true do |t|
-    t.integer  "topic_id"
-    t.string   "title"
-    t.text     "description"
-    t.string   "url1"
-    t.string   "url2"
-    t.string   "url3"
-    t.integer  "score",       :default => 0
-    t.boolean  "is_approved", :default => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.integer   "topic_id"
+    t.string    "title"
+    t.text      "description"
+    t.string    "url1"
+    t.string    "url2"
+    t.string    "url3"
+    t.integer   "score",       :default => 0
+    t.boolean   "is_approved", :default => false
+    t.timestamp "created_at",                     :null => false
+    t.timestamp "updated_at",                     :null => false
+    t.string    "question"
+    t.string    "correct"
+    t.string    "wrong1"
+    t.string    "wrong2"
+    t.string    "wrong3"
+    t.string    "wrong4"
+    t.boolean   "is_pro"
+    t.boolean   "is_intro"
+    t.text      "url"
   end
 
   create_table "scorings", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "topic_id"
-    t.integer  "reason_id"
-    t.integer  "vote"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer   "user_id"
+    t.integer   "topic_id"
+    t.integer   "reason_id"
+    t.integer   "vote"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "tasks", :force => true do |t|
-    t.integer  "topic_id"
-    t.integer  "reason_id"
-    t.integer  "user_id"
+    t.integer   "topic_id"
+    t.integer   "reason_id"
+    t.integer   "user_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.boolean   "is_quiz"
+    t.string    "answer"
+    t.integer   "score"
+  end
+
+  create_table "topic_levels", :force => true do |t|
+    t.integer  "level"
+    t.integer  "xp_req"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  create_table "topic_user_levels", :force => true do |t|
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.integer  "level",      :default => 0
+    t.integer  "points",     :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
   create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "score",       :default => 0
-    t.boolean  "is_approved", :default => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "thumbnail"
+    t.string    "title"
+    t.text      "description"
+    t.integer   "score",       :default => 0
+    t.boolean   "is_approved", :default => false
+    t.timestamp "created_at",                     :null => false
+    t.timestamp "updated_at",                     :null => false
+    t.string    "thumbnail"
   end
 
   create_table "users", :force => true do |t|
@@ -60,9 +95,11 @@ ActiveRecord::Schema.define(:version => 20120813211044) do
     t.string   "uid"
     t.string   "token"
     t.boolean  "is_admin",     :default => false
-    t.boolean  "is_temp_user", :default => false
+    t.boolean  "is_temp_user", :default => true
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
+    t.integer  "level",        :default => 1
+    t.integer  "xp",           :default => 0
   end
 
 end
