@@ -85,9 +85,12 @@ Debacle.Views.QuizzesIndex = Backbone.View.extend({
 	
 	quizAnswered: function(event) {
 		var value = $(event.target).val();
-		var answer = value.split(' ')[0];
-		var quiz = this.options.reasons.where({id: parseInt(value.split(' ')[1])})[0];
+		var id = parseInt(value.split(' ')[0]);
+		var answer = value.substr(value.indexOf(" ") + 1);
+		var quiz = this.options.reasons.where({id: id})[0];
 		
+		$(event.target).parents('div #quiz').removeClass('active-question-panel');
+		$(event.target).parents('div #quiz').addClass('active-answered-question-panel');
 		if (answer === quiz.get('correct')) {
 			this.setQuizTask(quiz, 'correct');
 		}

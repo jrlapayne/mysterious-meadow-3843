@@ -5,15 +5,15 @@
 		<% var win_num = Math.floor(Math.random() * 16); %>
 		<img src = '/assets/win<%= win_num + 1 %>.png' height = "100px" />
 	</div>
-	<div class = "small-text">
-		<b>Source:</b><span class = "link"><%= quiz.get('url1') %></span>
+	<div class = "small-text" style = "text-align: left; margin-left: 10px">
+		<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url1') %>" target = "_blank"><%= quiz.get('url1') %></a></span>
 		</br>
 		<% if (quiz.get('url2') && quiz.get('url2') !== "") { %>
-			<b>Source:</b><span class = "link"><%= quiz.get('url2') %></span>
+			<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url2') %>" target = "_blank"><%= quiz.get('url2') %></a></span>
 			</br>
 		<% } %>
 		<% if (quiz.get('url3') && quiz.get('url3') !== "") { %>
-			<b>Source:</b><span class = "link"><%= quiz.get('url3') %></span>
+			<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url3') %>" target = "_blank"><%= quiz.get('url3') %></a></span>
 			</br>
 		<% } %>
 	</div>
@@ -24,15 +24,15 @@
 		<% var fail_num = Math.floor(Math.random() * 23); %>
 		<img src = '/assets/fail<%= fail_num + 1 %>.png' height = "100px" />
 	</div>
-	<div class = "small-text">
-		<b>Source:</b><span class = "link"><%= quiz.get('url1') %></span>
+	<div class = "small-text" style = "text-align: left; margin-left: 10px">
+		<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url1') %>" target = "_blank"><%= quiz.get('url1') %></a></span>
 		</br>
 		<% if (quiz.get('url2') && quiz.get('url2') !== "") { %>
-			<b>Source:</b><span class = "link"><%= quiz.get('url2') %></span>
+			<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url2') %>" target = "_blank"><%= quiz.get('url2') %></a></span>
 			</br>
 		<% } %>
 		<% if (quiz.get('url3') && quiz.get('url3') !== "") { %>
-			<b>Source:</b><span class = "link"><%= quiz.get('url3') %></span>
+			<b>Source: </b><span class = "link"><a href = "<%= quiz.get('url3') %>" target = "_blank"><%= quiz.get('url3') %></a></span>
 			</br>
 		<% } %>
 	</div>

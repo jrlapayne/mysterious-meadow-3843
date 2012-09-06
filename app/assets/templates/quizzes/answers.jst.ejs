@@ -1,5 +1,5 @@
 <div class = "button-container">
 	<% for (i = 0; i < answers.length; i++) { %>
-		<button id = "answer" class = "answer-button" value = "<%= answers[i] + ' ' + quiz.get('id') %>"><%= answers[i] %></button>
+		<button id = "answer" class = "answer-button" value = "<%= quiz.get('id') + ' ' + answers[i] %>"><%= answers[i] %></button>
 	<% } %>
 </div>
