@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904213732) do
+ActiveRecord::Schema.define(:version => 20120906184917) do
 
   create_table "global_levels", :force => true do |t|
     t.integer  "level"
@@ -21,25 +21,25 @@ ActiveRecord::Schema.define(:version => 20120904213732) do
   end
 
   create_table "reasons", :force => true do |t|
-    t.integer   "topic_id"
-    t.string    "title"
-    t.text      "description"
-    t.string    "url1"
-    t.string    "url2"
-    t.string    "url3"
-    t.integer   "score",       :default => 0
-    t.boolean   "is_approved", :default => false
-    t.timestamp "created_at",                     :null => false
-    t.timestamp "updated_at",                     :null => false
-    t.string    "question"
-    t.string    "correct"
-    t.string    "wrong1"
-    t.string    "wrong2"
-    t.string    "wrong3"
-    t.string    "wrong4"
-    t.boolean   "is_pro"
-    t.boolean   "is_intro"
-    t.text      "url"
+    t.integer  "topic_id"
+    t.text     "description"
+    t.integer  "score",       :default => 0
+    t.boolean  "is_approved", :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "correct"
+    t.string   "wrong1"
+    t.string   "wrong2"
+    t.string   "wrong3"
+    t.string   "wrong4"
+    t.boolean  "is_pro"
+    t.boolean  "is_intro"
+    t.text     "url"
+    t.text     "title"
+    t.text     "url1"
+    t.text     "url2"
+    t.text     "url3"
+    t.text     "question"
   end
 
   create_table "scorings", :force => true do |t|
