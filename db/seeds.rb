@@ -775,9 +775,9 @@ Reason.create(
   topic_id: 4,
   title: "Driving while high makes you twice as likely to be involved in serious car crash",
   url1: 'http://blogs.scientificamerican.com/observations/2012/02/09/smoke-and-mirrors-driving-while-on-marijuana-doubles-ones-chances-of-a-serious-car-crash/',
-  score: 10,
+  score: 11,
   is_approved: false,
-  is_pro: false,
+  is_intro: true,
   url: 'http://www.drugabuse.gov/list/2009/issue010images/ScientificAmericanLogo.gif')
 
 Reason.create(
@@ -786,7 +786,7 @@ Reason.create(
   url1: 'http://alcoholism.about.com/cs/alerts/l/blnaa31.htm',
   score: 10,
   is_approved: false,
-  is_pro: true,
+  is_intro: true,
   url: 'http://old.epilepsyfoundation.org/local/massri/images/about_logo400w_1.gif')
 
 Reason.create(
