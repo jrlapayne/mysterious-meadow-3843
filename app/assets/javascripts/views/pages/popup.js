@@ -48,7 +48,7 @@ Debacle.Views.PagesPopup = Backbone.View.extend({
 	},
 	
 	facebookLogin: function() {
-		window.location = "http://high-lightning-4791.herokuapp.com/auth/facebook";
+		window.location = "http://mysterious-meadow-3843.herokuapp.com/auth/facebook";
 	},
 	
 	renderConstruction: function() {

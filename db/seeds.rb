@@ -6,7 +6,7 @@ Topic.create(
   
 Reason.create(
   topic_id: 1,
-  title: 'The cost of one scanner is up to $200k',
+  title: 'The cost of one TSA nude-body scanner is up to $200k',
   url1: 'http://articles.businessinsider.com/2012-05-10/politics/31650296_1_tsa-to-advanced-imaging-technology-scanners',
   score: 0,
   is_approved: true,
@@ -51,7 +51,7 @@ Reason.create(
 
 Reason.create(
   topic_id: 1,
-  title: 'TSA employees are suing TSA for cancer',
+  title: 'TSA employees in are suing the TSA for cancer issues related to the scanners',
   url1: 'http://intransit.blogs.nytimes.com/2011/07/12/airport-body-scanners-and-health/?src=twr',
   score: 0,
   is_approved: false,
@@ -60,7 +60,7 @@ Reason.create(
   
 Reason.create(
   topic_id: 1,
-  title: 'A TSA nude body scanner creates an image of a naked body',
+  title: "A TSA nude body scanner creates an image of the passenger's naked body",
   url1: 'http://en.wikipedia.org/wiki/Full_body_scanner',
   score: 0,
   is_approved: false,
@@ -69,7 +69,7 @@ Reason.create(
   
 Reason.create(
   topic_id: 1,
-  title: 'TSA scans take about 30 seconds',
+  title: 'TSA nude-body scans take about 30 seconds on average',
   url1: 'http://www.studentnewsdaily.com/daily-news-article/scanners-and-probing-pat-downs-upset-airline-passengers/',
   score: 0,
   is_approved: true,
@@ -83,7 +83,7 @@ Reason.create(
 
 Reason.create(
   topic_id: 1,
-  title: 'The cost of the TSA is over $8B/year',
+  title: 'The cost of the TSA is approximately $8 billion per year',
   url1: 'http://en.wikipedia.org/wiki/Transportation_Security_Administration',
   score: 0,
   is_approved: true,
@@ -97,7 +97,7 @@ Reason.create(
 
 Reason.create(
   topic_id: 1,
-  title: 'The TSA employs nearly 60,000 people',
+  title: 'The TSA directly employs nearly 60,000 people',
   url1: 'http://en.wikipedia.org/wiki/Transportation_Security_Administration',
   score: 0,
   is_approved: true,
@@ -139,7 +139,7 @@ Reason.create(
   
 Reason.create(
   topic_id: 1,
-  title: 'TSA will do enhanced pat-downs on children',
+  title: 'The TSA will perform enhanced pat-downs on children',
   url1: 'http://travel.usatoday.com/flights/post/2011/04/tsa-screening-controversy/155793/1',
   score: 0,
   is_approved: true,
@@ -503,7 +503,7 @@ Reason.create(
 
 Reason.create(
   topic_id: 3,
-  title: "To implement Finland's educational system in the US, all education from preschool to university would have to be free",
+  title: "All education from preschool to university would have to be free to implement Finland's educational system",
   url1: 'http://www.washingtonpost.com/blogs/answer-sheet/post/what-the-us-cant-learn-from-finland-about-ed-reform/2012/04/16/gIQAGIvVMT_blog.html',
   score: 0,
   is_approved: true,
@@ -517,7 +517,7 @@ Reason.create(
  
 Reason.create(
   topic_id: 3,
-  title: "To implement Finland's educational system in the US, free comprehensive health care would have to be provided to all students",
+  title: "Free comprehensive health care would have to be provided to all students to implement Finland's educational system",
   url1: 'http://www.washingtonpost.com/blogs/answer-sheet/post/what-the-us-cant-learn-from-finland-about-ed-reform/2012/04/16/gIQAGIvVMT_blog.html',
   score: 0,
   is_approved: true,
@@ -531,8 +531,9 @@ Reason.create(
 
 Reason.create(
   topic_id: 3,
-  title: "To implement Finland's educational system in the US, schools would have to be guaranteed equal allocation of money, so there would be no more rich schools or poor schools",
+  title: "Schools would have to be guaranteed equal allocation of money to implement Finland's educational system",
   url1: 'http://www.washingtonpost.com/blogs/answer-sheet/post/what-the-us-cant-learn-from-finland-about-ed-reform/2012/04/16/gIQAGIvVMT_blog.html',
+  description: "There would be be no more rich or poor schools."
   score: 0,
   is_approved: true,
   question: "True/False: In Finland, schools are guaranteed equal allocation of money",
@@ -723,16 +724,7 @@ Reason.create(
 
 Reason.create(
   topic_id: 4,
-  title: "Short term health problems inhibitions exist",
-  url1: 'http://www.webmd.com/mental-health/marijuana-use-and-its-effects',
-  score: 0,
-  is_approved: false,
-  is_pro: false,
-  url: 'http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/usability/2012/LBi_Masthead/logo.jpg')
-
-Reason.create(
-  topic_id: 4,
-  title: "Marijuana possibly impairs learning ability",
+  title: "Marijuana is believed to possibly impair learning ability",
   url1: 'http://www.acde.org/common/Marijana.htm',
   score: 0,
   is_approved: false,
@@ -952,7 +944,7 @@ Reason.create(
   
 Reason.create(
   topic_id: 4,
-  title: "17 states plus DC have legalized medical marijuana",
+  title: "17 states plus Washington DC have legalized medical marijuana",
   url1: 'http://en.wikipedia.org/wiki/Removal_of_cannabis_from_Schedule_I_of_the_Controlled_Substances_Act',
   score: 0,
   is_approved: true,
