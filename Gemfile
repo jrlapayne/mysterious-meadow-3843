@@ -8,7 +8,6 @@ gem 'rails', '3.2.6'
 gem 'backbone-on-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'omniauth-facebook'
-gem 'ancestry'
 
 group :development do
   gem 'sqlite3'
