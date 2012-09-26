@@ -7,7 +7,7 @@ Debacle.Views.TopicsTabs = Backbone.View.extend({
 		'click #pros' : 'factsPros',
 		'click #cons' : 'factsCons',
 		'click #quiz' : 'quizzesIndex',
-		'click #add' : 'addStuff'
+		'click #add' : 'factsCreate'
 	},
 	
 	render: function() {
@@ -34,10 +34,7 @@ Debacle.Views.TopicsTabs = Backbone.View.extend({
 		Backbone.history.navigate('quizzes' + this.options.topic.get('id'), true);
 	},
 	
-	addStuff: function() {
-		var view = new Debacle.Views.PagesPopup({
-			construction: true
-		});
-		$('#popup_inner').html(view.render().el);
+	factsCreate: function() {
+		Backbone.history.navigate('facts' + this.options.topic.get('id') + '/new', true);
 	}
 });

@@ -145,8 +145,8 @@ Debacle.Views.QuizzesIndex = Backbone.View.extend({
 		if (!tasks.where({user_id: current_user.get('id'), reason_id: quiz.get('id'), is_quiz: true})[0]) {
 			if (answer === 'correct') {
 				tasks.createQuizTask(current_user.get('id'), quiz.get('id'), topic.get('id'), answer);
-				this.options.users.addXp(current_user, this.options.g_lvls, 20);
-				this.options.tu_lvls.addOrUpdate(current_user, topic, this.options.t_lvls, 20);
+				this.options.users.addXp(this.options.users.where({id: current_user.get('id')})[0], this.options.g_lvls, 20);
+				this.options.tu_lvls.addOrUpdate(this.options.users.where({id: current_user.get('id')})[0], topic, this.options.t_lvls, 20);
 			} else {
 				tasks.createQuizTask(current_user.get('id'), quiz.get('id'), topic.get('id'), answer);
 			}

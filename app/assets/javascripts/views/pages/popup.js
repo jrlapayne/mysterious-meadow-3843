@@ -13,10 +13,16 @@ Debacle.Views.PagesPopup = Backbone.View.extend({
 		$(this.el).html(this.template({
 			
 		}));
-		if (this.options.construction) {
-			setTimeout(function() {
-				that.renderConstruction();
-			}, 1);
+		if (this.options.construction === true || this.options.construction === false) {
+			if (that.options.construction === true) {
+				setTimeout(function() {
+					that.renderConstruction();
+				}, 1);
+			} else {
+				setTimeout(function() {
+					that.renderNoVotes();
+				}, 1);
+			}
 		} else {
 			setTimeout(function() {
 				that.renderMessage();
@@ -54,4 +60,8 @@ Debacle.Views.PagesPopup = Backbone.View.extend({
 	renderConstruction: function() {
 		$('#under_construction').html(JST['pages/_construction']);
 	},
+	
+	renderNoVotes: function() {
+		$('#under_construction').html(JST['pages/_novotes']);	
+	}
 });

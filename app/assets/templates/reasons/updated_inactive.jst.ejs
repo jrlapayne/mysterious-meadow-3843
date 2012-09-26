@@ -1,0 +1,19 @@
+<div class = "thumbnail">
+	<% if (reason.get('url')) { %>
+		<img src = "<%= reason.get('url') %>" width="50">
+	<% } else { %>
+		<img src = "assets/fusegap.png" width="50">
+	<% } %>
+</div>
+<div class = "sum" id = "score"></div>
+<div class = "title">
+	<b><%= reason.get('title').split(' ')[0] %></b><%= " " + reason.get('title').substr(reason.get('title').indexOf(" ") + 1) %>
+	</br></br>
+</div>
+<div class = "show-more">
+	more ...
+</div>
+<div class = "stats">				
+	0
+	<img src= http://www.boingboing.net/filesroot/_01Independent-Projects_03Speech-Bubbles_Bubble.jpg height="15" width = "20">
+</div>

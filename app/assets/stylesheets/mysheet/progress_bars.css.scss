@@ -1,0 +1,51 @@
+.progress-bar-container {
+	position: relative;
+	box-shadow: inset 0 0 1px 1px rgba(#000, 0.3);
+	@include rounded-corners(3px);
+	margin: 0;
+	padding: 0;
+	&.topic {
+		width: 200px;
+		border: 1px solid rgba($textblue, 0.65);
+		margin-top: 23px;
+		margin-left: 65px;
+		margin-bottom: 27px;
+	}
+	&.global {
+		margin-top: 17px;
+		margin-left: 46px;
+		width: 220px;
+		border: 1px solid rgba(#007F26, 0.65);
+	}
+}
+
+.progress-bar {
+	@include rounded-corners(2px);
+	box-shadow: inset 1px 1px 1px 0 rgba(#fff, 0.75), 1px 0 1px 0 rgba(#000, 0.75);
+	height: 10px;
+	z-index: 1;
+	&.topic {
+		background-color: $backgroundcolor;
+	}
+	&.global {
+		background-color: #47CC51;
+	}
+}
+
+.progress-bar-text {
+	color: darken($buttonshadowblue, 45%);
+	font-size: 9px;
+	text-align: right;
+	width: 100%;
+	height: 50px;
+	z-index: 2;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 5px;
+	
+	&.global { 
+		color: darken(#47CC51, 35%);
+	}
+}

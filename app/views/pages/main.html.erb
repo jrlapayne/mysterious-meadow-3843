@@ -1,19 +1,19 @@
-<div class = "header-container">
-	<div style = "position: absolute; top: 4px; left: 5px">
-		<img src = "assets/fusegap_white.png" height = "50px" />
-		<span style = "position: absolute; top: 4px; left: 60px; font-size: 40px; color: #323232"><b>fuseGap</b></span>
+<div class = "header container">
+	<div id = "goto_home" class = "header logo">
+		<img src = 'assets/fusegap_white.png' height = '50px' />
+		<span class = 'logo-text'>fuseGap</span>
 	</div>
-	<div id = "header" class = "header"></div>
+	<div id = "header" class = "header navbar"></div>
 </div>
 <div id = "popup" class = "popup-background hide">
 	<div id = "popup_inner" class = "popup-container"></div>
 </div>
-<div class = "page-container">
-	<div id = "left_column" class = "left-panel"></div>
-	<div class = "right-panel-container">
-		<div class = "right-panel">
-			<div id = "right_column_top" class = "profile-panel"></div>
-			<div id = "right_column_bot" class = "topic-container"></div>
+<div class = "page">
+	<div id = "left_column" class = "column left"></div>
+	<div class = "column right">
+		<div class = "column container">
+			<div id = "right_column_top" class = "column right side top"></div>
+			<div id = "right_column_bot" class = "column right side bottom"></div>
 		</div>
 	</div>
 </div>
@@ -31,7 +31,9 @@
 		"scorings": <%= Scoring.all.to_json %>,
 		"global_levels" : <%= GlobalLevel.all.to_json %>,
 		"topic_levels" : <%= TopicLevel.all.to_json %>,
-		"topic_user_levels" : <%= TopicUserLevel.all.to_json %>
+		"topic_user_levels" : <%= TopicUserLevel.all.to_json %>,
+		"reason_edits" : <%= ReasonEdit.all.to_json %>,
+		"comments" : <%= Comment.all.to_json %>
 	}
 </script>
 

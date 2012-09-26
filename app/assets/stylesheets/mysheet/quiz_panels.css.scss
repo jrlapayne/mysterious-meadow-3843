@@ -1,0 +1,126 @@
+.question-panel {
+	cursor: pointer;
+	width: 492px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding: 15px 15px 12px 15px;
+	height: 58px;
+	.title {
+		height: 1.6em;
+		width: 75%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.show-more {
+		margin-left: 150px;
+	}
+	.x-text {
+		color: $redtext; 
+		font-size: 130%;
+	}
+	.checkmark-text {
+		color: $greentext; 
+		font-size: 130%;
+	}
+	.questionmark-text {
+		color: $textblue; 
+		font-size: 130%;
+	}
+}
+
+.active-question-panel {
+	border: 1px solid $panelouterbordercolor;
+	width: 492px;
+	margin: 0 auto;
+	@include rounded-corners(5px);
+	background-color: #ffffff;
+	padding: 5px 15px 12px 15px;
+	margin-bottom: 6px;
+	overflow: auto;
+	.title {
+		margin-top: 10px;
+		width: 99%;
+		min-height: 4.2em;
+	}
+	.data-panel {
+		overflow: auto;
+		margin: 10px -15px -12px -15px;
+		padding: 10px 0 18px 0;
+		background-color: #f0f0f0;
+		border-top: 1px solid #d6d6d6;
+		.button-container {
+			margin: 0 auto; 
+			width: 300px;
+		}
+	}
+}
+
+.active-answered-question-panel {
+	border: 1px solid $panelouterbordercolor;
+	width: 492px;
+	margin: 0 auto;
+	@include rounded-corners(5px);
+	background-color: #ffffff;
+	padding: 5px 15px 12px 15px;
+	margin-bottom: 6px;
+	overflow: auto;
+	.title {
+		margin-top: 10px;
+		width: 99%;
+		min-height: 4.2em;
+	}
+	.data-panel {
+		overflow: auto;
+		margin: 10px -15px -12px -15px;
+		padding: 10px 0 18px 0;
+		border-top: 1px solid #d6d6d6;			
+		text-align: center;
+		font-size: 90%;
+	}
+}
+.question-thumbnail {
+	width: 50px;
+	margin: -15px 8px -13px -15px;
+	float: left;
+	border-right: 1px solid #f2f2f2;
+	padding: 15px 10px 0 15px;
+	height: 70px;
+}
+.correct-text {
+	color: $greentext;
+	margin: 0px;
+	padding-bottom: 5px;
+	font-size: 110%;
+	letter-spacing: 1px;
+}
+.incorrect-text {
+	color: $redtext;
+	margin: 0px;
+	padding-bottom: 5px;
+	font-size: 110%;
+	letter-spacing: 1px;
+}
+.rage-comic {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 100px;
+}
+.answer-button {
+	box-shadow: -1px -1px 2px rgba(darken($buttonshadowblue,40%), 0.99) inset,
+				1px 1px 2px rgba(darken($buttonshadowblue,40%), 0.99) inset;
+	@include rounded-corners(8px);
+	@include linear-gradient(darken($buttonshadowblue,15%), darken($buttonshadowblue,30%));
+	@include fonts;
+	float: left;
+	height: 33px;
+	width: 300px;
+	padding: 0px;
+	margin-top: 8px;
+	color: #ffffff;
+	font-size: 80%;
+	border: none;
+	text-align: center;
+	@include text-shadow(0, 1px, 0, rgba(darken($buttonshadowblue,50%),0.99));	
+	font-weight: bold;
+}

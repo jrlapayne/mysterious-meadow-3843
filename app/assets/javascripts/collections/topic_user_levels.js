@@ -12,6 +12,8 @@ Debacle.Collections.TopicUserLevels = Backbone.Collection.extend({
 
 			if (tu_lvl.get('points') + points >= level.get('xp_req') && levels.where({level: level.get('level') + 1})[0]) {
 				tu_lvl.set({points: tu_lvl.get('points') + points - level.get('xp_req'), level: tu_lvl.get('level') + 1});
+				user.set({votes: user.get('votes') + (2 * tu_lvl.get('level'))});
+				user.save();
 				leveled_up = true;
 			} else {
 				tu_lvl.set({points: tu_lvl.get('points') + points});

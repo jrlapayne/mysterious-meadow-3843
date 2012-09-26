@@ -1,0 +1,274 @@
+.active-fact-panel {
+	border: 1px solid $panelouterbordercolor;
+	width: 492px;
+	margin: 0 auto;
+	@include rounded-corners(5px);
+	background-color: #ffffff;
+	padding: 15px 15px 12px 15px;
+	margin-bottom: 6px;
+	overflow: auto;
+	.title {
+		min-height: 2.2em;
+		margin-top: 7px;
+		width: 90%;
+	}
+	.data-panel {
+		position: relative;
+		overflow: auto;
+		margin: 0 -15px -12px -15px;
+		height: 45px;
+		background-color: #f0f0f0;
+		border-top: 1px solid #d6d6d6;
+	}
+	.sum {
+		margin: -13px 0 0 0;
+	}
+}
+.fact-panel {
+	cursor: pointer;
+	width: 492px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding: 15px 15px 12px 15px;
+	height: 58px;
+	.title {
+		height: 1.6em;
+		width: 75%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+.inner-fact-panel {
+	border-top: 1px solid $panelinnerbordercolor;
+	border-bottom: 1px solid $panelinnerbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	margin-top: -1px;
+}
+.top-fact-panel {
+	border-top: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	border-bottom: 1px solid $panelinnerbordercolor;
+	@include top-rounded-corners(5px);
+	background-color: #ffffff;
+}
+.bottom-fact-panel {
+	border-bottom: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	width: 492px;
+	margin: 0 auto;
+	@include bottom-rounded-corners(5px);
+	margin-bottom: 6px;
+}
+
+.top-perma-panel {
+	border-top: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	@include top-rounded-corners(5px);
+	background-color: #ffffff;
+}
+.bottom-perma-panel {
+	border-bottom: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	width: 492px;
+	margin: 0 auto;
+	@include bottom-rounded-corners(5px);
+	margin-bottom: 6px;
+}
+
+.title {
+	@include text-shadow(0, 1px, 0, #ffffff);
+	font-size: 90%;
+	color: #333333;
+	line-height: 135%;
+	margin-top: 17px;
+}
+.thumbnail {
+	width: 50px;
+	margin: -32px 8px -13px 0;
+	float: left;
+	border-right: 1px solid #f2f2f2;
+	padding: 15px 10px 0 0;
+	height: 70px;
+}
+.active-panel-thumbnail {
+	width: 50px;
+	margin: -25px 8px -13px -15px;
+	float: left;
+	border-right: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	padding: 15px 10px 0 15px;
+	height: 70px;
+}
+.description {
+	@include text-shadow(0, 1px, 0, #ffffff);
+	margin-top: 35px;
+	font-size: 80%;
+	line-height: 145%;
+	color: #333333;
+}
+.small-text {
+	height: 27px;
+	overflow: hidden;
+	font-size: 70%;
+	margin: 2px 0 0 0;
+	color: $lightgreytext;
+	@include text-shadow(0, 1px, 0, #ffffff);
+}
+.link {
+	color: $textblue;
+}
+.show-more {
+	font-size: 70%;
+	color: rgb(189,189,189);
+	float: left;
+	margin-left: 175px;
+	padding-top: 8px;
+}
+.stats {
+	font-size: 70%;
+	color: rgba($textblue, 0.60);
+	float: right;
+	font-weight: bold;
+}
+
+.voted-3 {
+	z-index: 0;
+	border-radius: 50%;
+	width: 20px;
+	height: 22px;
+	background: rgba($backgroundcolor, 0.75);
+	box-shadow: inset 0 0 1px 1px rgba(#fff, 0.5);
+}
+
+.voted-2 {
+	z-index: 0;
+	border-radius: 50%;
+	width: 20px;
+	height: 22px;
+	background: rgba($backgroundcolor, 0.5);
+	box-shadow: inset 0 0 2px 2px rgba(#fff, 0.5);
+}
+
+.voted-1 {
+	z-index: 0;
+	border-radius: 50%;
+	width: 20px;
+	height: 22px;
+	background: rgba($backgroundcolor, 0.25);
+	box-shadow: inset 0 0 3px 3px rgba(#fff, 0.5);
+}
+
+.boldme {
+	color: darken($lightgreytext, 10%);
+	@include text-shadow(0, 0, 0, #000);
+}
+
+.bold-text {
+	@include text-shadow(0, 1px, 0, #ffffff);
+	font-size: 90%;
+	font-weight: bold;
+	color: #333333;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.left-button-arrow {
+	font-size: 80%; 
+	margin-right: 5px;
+	margin-left: -4px;
+	color: darken($buttonshadowblue,25%);
+}
+
+.right-button-arrow {
+	font-size: 80%; 
+	margin-left: 5px;
+	color: darken($buttonshadowblue,25%);
+}
+
+.sum {
+	float: right;
+	height: 10px;
+	margin: -23px 0 0 0;
+	letter-spacing: 1px;
+}
+
+.vote-text {
+	float: left;
+	font-size: 75%;
+	color: $lightgreytext;
+	margin-top: 16px;
+	margin-left: 178px;
+}
+
+.show-comments-text {
+	cursor: pointer;
+	float: right;
+	font-size: 75%;
+	color: $textblue;
+	margin-top: 16px;
+	margin-right: 13px;
+	font-weight: bold;
+}
+
+.footer-text-span {
+	color: rgb(153,153,153);
+	font-weight: normal;
+}
+
+.footer-text-span-facts {
+	color: rgb(153,153,153);
+}
+
+.footer-text-span-intro-before {
+	color: rgb(153,153,153);
+	font-weight: normal;
+	margin-left: 3px;
+}
+
+.footer-text-span-intro-after {
+	color: rgb(153,153,153);
+	font-weight: normal;
+	margin-right: 5px;
+}
+
+.footer-text-span-pro-after {
+	color: rgb(153,153,153);
+	font-weight: normal;
+	margin-right: 5px;
+}
+
+.vote-button {
+	cursor: pointer;
+	box-shadow: -1px -1px 2px rgba(darken($buttonshadowblue,25%), 0.99) inset,
+				1px 1px 2px rgba(darken($buttonshadowblue,25%), 0.99) inset;
+	@include rounded-corners(5px);
+	@include linear-gradient(lighten($buttonshadowblue,8%), darken($buttonshadowblue,15%));
+	float: left;
+	height: 19px;
+	width: 30px;
+	padding: 5px;
+	color: #fcfcfc;
+	font-size: 90%;
+}
+
+.upvote-button {
+	margin: 8px 4px 8px 8px;
+}
+
+.downvote-button {
+	margin: 8px 8px 8px 4px;
+}
+
+.vote-button-text {
+	margin: 1px;
+	text-align: center;
+	@include text-shadow(0, 1px, 0, #999999);	
+	font-weight: bold;
+}

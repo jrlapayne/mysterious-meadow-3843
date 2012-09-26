@@ -11,13 +11,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906184917) do
+ActiveRecord::Schema.define(:version => 20120910162529) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "reason_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.string   "ancestry"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "global_levels", :force => true do |t|
     t.integer  "level"
     t.integer  "xp_req"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "reason_edits", :force => true do |t|
+    t.integer  "topic_id"
+    t.text     "title"
+    t.text     "description"
+    t.text     "url1"
+    t.text     "url2"
+    t.text     "url3"
+    t.text     "question"
+    t.string   "correct"
+    t.string   "wrong1"
+    t.string   "wrong2"
+    t.string   "wrong3"
+    t.string   "wrong4"
+    t.boolean  "is_pro"
+    t.boolean  "is_intro"
+    t.text     "url"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "reason_id"
+    t.integer  "user_id"
   end
 
   create_table "reasons", :force => true do |t|
@@ -100,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20120906184917) do
     t.datetime "updated_at",                      :null => false
     t.integer  "level",        :default => 1
     t.integer  "xp",           :default => 0
+    t.integer  "votes",        :default => 0
   end
 
 end

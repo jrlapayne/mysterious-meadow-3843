@@ -1,1 +1,38 @@
-Reason Edit
+<form id = "edit_reason">
+	<label>Title:</label></br>
+	<textarea id = "title"><%= reason.get('title') %></textarea></br>
+	<label>Description:</label></br>
+	<textarea rows = "4" id = "description"><%= reason.get('description') %></textarea></br>
+	<label>Source Url 1:</label>
+	<input type = "text" id = "url1" value = "<%= reason.get('url1') %>"></br>
+	<label>Source Url 2:</label>
+	<input type = "text" id = "url2" value = "<%= reason.get('url2') %>"></br>
+	<label>Source Url 3:</label>
+	<input type = "text" id = "url3" value = "<%= reason.get('url3') %>"></br></br>
+	<label>Question:</label></br>
+	<textarea id = "question"><%= reason.get('question') %></textarea></br>
+	<label>Correct:</label>
+	<input type = "text" id = "correct" value = "<%= reason.get('correct') %>" /></br>
+	<label>Wrong 1:</label>
+	<input type = "text" id = "wrong1" value = "<%= reason.get('wrong1') %>"></br>
+	<label>Wrong 2:</label>
+	<input type = "text" id = "wrong2" value = "<%= reason.get('wrong2') %>"></br>
+	<label>Wrong 3:</label>
+	<input type = "text" id = "wrong3" value = "<%= reason.get('wrong3') %>"></br>
+	<label>Wrong 4:</label>
+	<input type = "text" id = "wrong3" value = "<%= reason.get('wrong4') %>"></br></br>
+	<% if (reason.get('is_intro')) { %>
+		<input type = "radio" name = "category" id = "intro" checked = "yes" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" />Pro</br>
+		<input type = "radio" name = "category" id = "con" />Con</br>
+	<% } else if (reason.get('is_pro') === true) { %>
+		<input type = "radio" name = "category" id = "intro" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" checked = "yes" />Pro</br>
+		<input type = "radio" name = "category" id = "con" />Con</br>
+	<% } else { %>
+		<input type = "radio" name = "category" id = "intro" />Intro</br>
+		<input type = "radio" name = "category" id = "pro" />Pro</br>
+		<input type = "radio" name = "category" id = "con" checked = "yes" />Con</br>
+	<% } %>
+	<input type = "submit" id = "submit_update" value = "Update Fact" /><button id = "cancel_update">Cancel</button>
+</form>

@@ -1,4 +1,5 @@
 <li value = "<%= reason.get('id') %>" style = "display: none" />
+<div id = "edit_fact"></div>
 <div id = "inactive" class = "">
 	<div class = "thumbnail">
 		<% if (reason.get('url')) { %>
@@ -7,15 +8,7 @@
 			<img src = "assets/fusegap.png" width="50">
 		<% } %>
 	</div>
-	<div class = "sum">
-		<div class = "small-text">
-			<% if (sum >= 0) { %>
-				<%= "+" + sum %>
-			<% } else { %>
-				<%= sum %>
-			<% } %>
-		</div>
-	</div>
+	<div class = "sum" id = "score"></div>
 	<div class = "title">
 		<b><%= reason.get('title').split(' ')[0] %></b><%= " " + reason.get('title').substr(reason.get('title').indexOf(" ") + 1) %>
 		</br></br>
@@ -37,15 +30,7 @@
 			<img src = "assets/fusegap.png" width="50">
 		<% } %>
 	</div>
-	<div class = "sum">
-		<div class = "small-text">
-			<% if (sum >= 0) { %>
-				<%= "+" + sum %>
-			<% } else { %>
-				<%= sum %>
-			<% } %>
-		</div>
-	</div>
+	<div class = "sum" id = "score"></div>
 	<div class = "title">
 		<b><%= reason.get('title') %></b>
 	</div>
@@ -70,6 +55,9 @@
 		</div>
 	<% } %>
 	<div class = "data-panel">
+		<div style = "position: absolute; top: 10px; left: 10px; width: 50px">
+			<button id = "edit" value = "<%= reason.get('id') %>">Edit</button>
+		</div>
 		<div class = "vote-text">Vote:</div> 
 		<div style = "margin-left: 210px">				
 			<div id = "upvote" class = "vote-button upvote-button">
@@ -79,8 +67,9 @@
 				<div class = "vote-button-text">&#8212;</div>
 			</div>
 		</div>
-		<div class = "show-comments-text">
+		<div class = "show-comments-text" id = "comments_button">
 			<span class="footer-text-span">Comments (</span>0<span class="footer-text-span">)</span>
 		</div>
+		<div id = "comments"></div>
 	</div>
 </div>

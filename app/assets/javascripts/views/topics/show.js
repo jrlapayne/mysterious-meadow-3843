@@ -18,7 +18,7 @@ Debacle.Views.TopicsShow = Backbone.View.extend({
 	
 	setClass: function(position) {
 		if (position === 'top') {
-			$(this.el).addClass('topic-panel top-panel-topic');
+			$(this.el).addClass('topic-panel top-panel-topic inner-topic-panel');
 		} else if (position === 'bot') {
 			$(this.el).addClass('topic-panel bottom-panel-topic');
 		} else {

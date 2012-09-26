@@ -8,6 +8,8 @@ Debacle.Routers.Router = Backbone.Router.extend({
 		'facts:id/pros' 	: 'factsPros',
 		'facts:id/cons' 	: 'factsCons',
 		'facts:id/intro' 	: 'factsIntro',
+		'facts:id/new'		: 'factsCreate',
+		'facts:id/edit'		: 'factsEdit',
 		'quizzes:id' 		: 'quizzesIndex',
 		
 		'profile' : 'usersShow'
@@ -23,6 +25,8 @@ Debacle.Routers.Router = Backbone.Router.extend({
 		this.g_lvls = options.global_levels;
 		this.t_lvls = options.topic_levels;
 		this.tu_lvls = options.topic_user_levels;
+		this.edits = options.reason_edits;
+		this.comments = options.comments;
 		
 		this.pagesHeader();
 		this.miniProfile();
@@ -131,7 +135,8 @@ Debacle.Routers.Router = Backbone.Router.extend({
 			scorings: this.scorings,
 			g_lvls: this.g_lvls,
 			t_lvls: this.t_lvls,
-			tu_lvls: this.tu_lvls
+			tu_lvls: this.tu_lvls,
+			edits: this.edits
 		});
 		$('#left_column').html(view.render().el);
 	},
@@ -150,7 +155,8 @@ Debacle.Routers.Router = Backbone.Router.extend({
 			scorings: this.scorings,
 			g_lvls: this.g_lvls,
 			t_lvls: this.t_lvls,
-			tu_lvls: this.tu_lvls
+			tu_lvls: this.tu_lvls,
+			edits: this.edits
 		});
 		$('#left_column').html(view.render().el);
 	},
@@ -169,8 +175,9 @@ Debacle.Routers.Router = Backbone.Router.extend({
 			scorings: this.scorings,
 			g_lvls: this.g_lvls,
 			t_lvls: this.t_lvls,
-			tu_lvls: this.tu_lvls
-		});
+			tu_lvls: this.tu_lvls,
+			edits: this.edits
+		});   
 		$('#left_column').html(view.render().el);
 	},
 	
@@ -188,10 +195,49 @@ Debacle.Routers.Router = Backbone.Router.extend({
 			scorings: this.scorings,
 			g_lvls: this.g_lvls,
 			t_lvls: this.t_lvls,
+			tu_lvls: this.tu_lvls,
+			edits: this.edits
+		});
+		$('#left_column').html(view.render().el);
+	},
+	
+	factsCreate: function(id) {
+		this.activateHeader();
+		$('#header').find('div #add').addClass('hide');
+		$('#header').find('div #add_active').removeClass('hide');
+		var view = new Debacle.Views.ReasonsCreate({
+			current_user: this.current_user,
+			users: this.users,
+			topics: this.topics,
+			topic: this.topics.where({id: parseInt(id)})[0],
+			reasons: this.reasons,
+			tasks: this.tasks,
+			scorings: this.scorings,
+			g_lvls: this.g_lvls,
+			t_lvls: this.t_lvls,
 			tu_lvls: this.tu_lvls
 		});
 		$('#left_column').html(view.render().el);
 	},
+	
+	factsEdit: function(id) {
+		this.activateHeader();
+		var view = new Debacle.Views.ReasonsEdit({
+			current_user: this.current_user,
+			users: this.users,
+			topics: this.topics,
+			reason: this.reasons.where({id: parseInt(id)})[0],
+			reasons: this.reasons,
+			tasks: this.tasks,
+			scorings: this.scorings,
+			g_lvls: this.g_lvls,
+			t_lvls: this.t_lvls,
+			tu_lvls: this.tu_lvls,
+			edits: this.edits
+		});
+		$('#left_column').html(view.render().el);
+	},
+	
 	fauxQuizzesIndex: function(id) {
 		if (this.signedInUser(this.current_user)) {
 			this.activateHeader();

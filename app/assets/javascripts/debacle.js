@@ -14,6 +14,8 @@ window.Debacle = {
 		this.global_levels = new Debacle.Collections.GlobalLevels(data.global_levels);
 		this.topic_levels = new Debacle.Collections.TopicLevels(data.topic_levels);
 		this.topic_user_levels = new Debacle.Collections.TopicUserLevels(data.topic_user_levels);
+		this.reason_edits = new Debacle.Collections.ReasonEdits(data.reason_edits);
+		this.comments = new Debacle.Collections.Comments(data.comments);
 
 		new Debacle.Routers.Router({
 			current_user: this.current_user,
@@ -24,7 +26,9 @@ window.Debacle = {
 			scorings: this.scorings,
 			global_levels: this.global_levels,
 			topic_levels: this.topic_levels,
-			topic_user_levels: this.topic_user_levels
+			topic_user_levels: this.topic_user_levels,
+			reason_edits: this.reason_edits,
+			comments: this.comments
 		});
 		this.preLoad();
 		Backbone.history.start();

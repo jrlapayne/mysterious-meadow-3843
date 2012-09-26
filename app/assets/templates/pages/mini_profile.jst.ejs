@@ -1,20 +1,22 @@
-<div class = "upper-subset">
-	<div class = "profile-pic">
-		<% if (current_user.get('is_temp_user')) { %>
-			<button id = "fb_login" class = "fb-login-profile">Sign in with Facebook</button>
-		<% } else { %>
-			<img src="https://graph.facebook.com/<%= current_user.get('uid') %>/picture" height = "35" width = "35"/>
-		<% } %>
-	</div>
-	<div class = "name-text">
-		<div class = "bold-text">
-			<% if (!current_user.get('is_temp_user')) { %>
-				<%= current_user.get('name') %>
+<div class = "profile-panel">
+	<div class = "upper-subset">
+		<div class = "profile-pic">
+			<% if (current_user.get('is_temp_user')) { %>
+				<button id = "fb_login" class = "fb-login-profile">Sign in with Facebook</button>
+			<% } else { %>
+				<img src="https://graph.facebook.com/<%= current_user.get('uid') %>/picture" height = "35" width = "35"/>
 			<% } %>
 		</div>
+		<div class = "name-text">
+			<div class = "bold-text">
+				<% if (!current_user.get('is_temp_user')) { %>
+					<%= current_user.get('name') %>
+				<% } %>
+			</div>
+		</div>
+		<div style = "position: absolute; top: 0px; right: 0px; width: 100px; height: 65px; border-left: 1px solid #dfdfdf; text-align: center">
+			<div id = "level" style = "margin-top: 25px"><span class = "sexting">Level: <b class = "greenish"><%= current_user.get('level') %></b></span></div>
+		</div>
 	</div>
-	<div style = "position: absolute; top: 0px; right: 0px; width: 100px; height: 65px; border-left: 1px solid #dfdfdf; text-align: center">
-		<div id = "level" style = "margin-top: 25px"><span class = "sexting">Level: <b class = "greenish"><%= current_user.get('level') %></b></span></div>
-	</div>
+	<div id = "global_xp_bar"></div>
 </div>
-<div id = "global_xp_bar"></div>

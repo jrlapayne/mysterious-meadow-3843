@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :provider, :uid, :token, :is_admin, :is_temp_user, :level, :xp
+  attr_accessible :name, :email, :provider, :uid, :token, :is_admin, :is_temp_user, :level, :xp, :votes
   
   def self.create_with_omniauth(auth, user)
       user.provider = auth["provider"]

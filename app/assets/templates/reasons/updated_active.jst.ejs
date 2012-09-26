@@ -1,0 +1,48 @@
+<div class = "active-panel-thumbnail">
+	<% if (reason.get('url')) { %>
+		<img src = "<%= reason.get('url') %>" width="50">
+	<% } else { %>
+		<img src = "assets/fusegap.png" width="50">
+	<% } %>
+</div>
+<div class = "sum" id = "score"></div>
+<div class = "title">
+	<b><%= reason.get('title') %></b>
+</div>
+<div class = "description">
+	<%= reason.get('description') %>
+	</br></br>
+</div>
+<div class = "small-text">
+	<b>Source: </b><span class = "link"><a href = "<%= reason.get('url1') %>" target = "_blank"><%= reason.get('url1') %></a></span>
+	</br></br>
+</div>
+<% if (reason.get('url2')) { %>
+	<div class = "small-text">
+		<b>Source: </b><span class = "link"><a href = "<%= reason.get('url2') %>" target = "_blank"><%= reason.get('url2') %></a></span>
+		</br></br>
+	</div>
+<% } %>
+<% if (reason.get('url3')) { %>
+	<div class = "small-text">
+		<b>Source:</b><span class = "link"><a href = "<%= reason.get('url3') %>" target = "_blank"><%= reason.get('url3') %></a></span>
+		</br></br>
+	</div>
+<% } %>
+<div class = "data-panel">
+	<div style = "position: absolute; top: 10px; left: 10px; width: 50px">
+		<button id = "edit" value = "<%= reason.get('id') %>">Edit</button>
+	</div>
+	<div class = "vote-text">Vote:</div> 
+	<div style = "margin-left: 210px">				
+		<div id = "upvote" class = "vote-button upvote-button">
+			<div class = "vote-button-text">+</div>
+		</div>
+		<div id = "downvote" class = "vote-button downvote-button">
+			<div class = "vote-button-text">&#8212;</div>
+		</div>
+	</div>
+	<div class = "show-comments-text">
+		<span class="footer-text-span">Comments (</span>0<span class="footer-text-span">)</span>
+	</div>
+</div>

@@ -2,135 +2,83 @@
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-@mixin gradients($color) {
-	background-image: -webkit-gradient(linear, left top, left bottom, from( lighten($color, 10%) /*{start}*/), to( darken($color, 10%) /*{end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( lighten($color, 10%) /*{start}*/, darken($color, 10%) /*{end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( lighten($color, 10%) /*{start}*/, darken($color, 10%) /*{end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( lighten($color, 10%) /*{start}*/, darken($color, 10%) /*{end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( lighten($color, 10%) /*{start}*/, darken($color, 10%) /*{end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( lighten($color, 10%) /*{start}*/, darken($color, 10%) /*{end}*/);
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;                                                                                                                 
+  border-radius: $radius;
 }
 
-@mixin reverse-gradients($color) {
-	background-image: -webkit-gradient(linear, left top, left bottom, from( darken($color, 10%) /*{start}*/), to( lighten($color, 10%) /*{end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( darken($color, 10%) /*{start}*/, lighten($color, 10%) /*{end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( darken($color, 10%) /*{start}*/, lighten($color, 10%) /*{end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( darken($color, 10%) /*{start}*/, lighten($color, 10%) /*{end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( darken($color, 10%) /*{start}*/, lighten($color, 10%) /*{end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( darken($color, 10%) /*{start}*/, lighten($color, 10%) /*{end}*/);
+@mixin top-rounded-corners($radius) {
+	-webkit-border-top-right-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	-moz-border-radius-topright: $radius;
+	-moz-border-radius-topleft: $radius;
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;                                                                                                                     
 }
 
-@mixin progress-bars($color, $height) {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: $height; 
-	background: getColor($color, 1); 
-	border: 1px solid darken((getColor($color, 1)), 5%); 
-	color: $white;  
-	display: inline-block;  
-	line-height: 1; 
-	margin: 0; 
-	outline: none;  
-	margin-bottom: $buttonBase;
-	text-align: center;
-	padding: 0;
+@mixin bottom-rounded-corners($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;                                                                              
 }
 
-@mixin defaultFontFamily {
-  font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@mixin left-rounded-corner($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;                                                                                                                
 }
 
-@mixin cssTriangle($triangleSize, $triangleColor, $triangleDirection) {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: solid   $triangleSize;
-  @if ($triangleDirection == top) {
-    border-color: $triangleColor transparent transparent transparent;
-  }
-  @if ($triangleDirection == bottom) {
-    border-color: transparent transparent $triangleColor transparent;
-  }
-  @if ($triangleDirection == left) {
-    border-color: transparent transparent transparent $triangleColor;
-  }
-  @if ($triangleDirection == right) {
-    border-color: transparent $triangleColor transparent transparent;
-  }
-  // .example { @include css-triangle(5px, #fff, bottom); }
+@mixin right-rounded-corner($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;                                                                                                                
 }
 
-@mixin font-size($size, $is-important: false) {
-  @if $is-important {
-    font-size: $size + px !important;
-    font-size: ($size / 10) + rem !important;
-  } @else {
-    font-size: $size + px;
-    font-size: ($size / 10) + rem;
-  }
+@mixin top-left-rounded-corner($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+	border-top-left-radius: $radius;                                                                                                              
 }
 
-@mixin button($color, $colorNum) {
-	width: auto; 
-	background: getColor($color, $colorNum); 
-	border: 1px solid darken((getColor($color, $colorNum)), 5%);
-	@if $colorNum < 2 { 
-		color: $white;
-	} @else {
-		color: $textColor;
-	}
-	@include fonts;
-	cursor: pointer; 
-	display: inline-block;  
-	font-weight: bold; 
-	outline: none;  
-	position: relative; 
-	text-align: center; 
-	text-decoration: none;
-	border-radius: $radius;
-	box-shadow: 1px 1px 1px rgba($color, 0.5),
-				1px 1px 1px rgba($white, 0.75) inset;
-	@include gradients(getColor($color, $colorNum));
-	
-	&:hover {
-		box-shadow: -1px -1px 1px rgba($white, 0.75) inset,
-					1px 1px 1px rgba($white, 0.75) inset;
-	}
-	
-	&:active {
-		background: darken(getColor($color, $colorNum), 10%); 
-		@include reverse-gradients(darken(getColor($color, $colorNum), 10%));
-		box-shadow: 0 0 0 rgba($white, 0);
-	}
+@mixin top-right-rounded-corner($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+	border-top-right-radius: $radius;                                                                                                              
 }
 
-@mixin button-size($size) {
-	font-size: getFontSize($size - 1);
-	margin: 0;
-	padding: ($buttonBase / 4) * $size ($buttonBase / 2) * $size;
-	line-height: 1; 
+@mixin bottom-left-rounded-corner($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;   
+  border-bottom-left-radius: $radius;                                                                                                              
 }
 
-@mixin panel($color) {
-	position: relative;
-	color: mix($textColor, getColor($color, 1), 70%);
-	border-radius: $radius;
-	background: getColor($color, 4);
-	border: solid 1px darken(getColor($color, 4), 5%);
-	box-shadow: 3px 3px 3px rgba(darken($color, 10%), 0.5);
-	
-	&.active {
-		color: mix($textColor, $color);
-		background: getColor($color, 2);
-		border: solid 1px darken(getColor($color, 2), 5%);
-		box-shadow: inset 3px 3px 3px rgba(darken($color, 10%), 0.5);
-	}
-	
-	&.visited {
-		background: getColor($color, 3);
-		border: solid 1px darken(getColor($color, 3), 5%);
-		box-shadow: inset 3px 3px 3px rgba(darken($color, 10%), 0.5);
-	}
+@mixin bottom-right-rounded-corner($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;   
+  border-bottom-right-radius: $radius;                                                                                                              
+}
+
+@mixin box-shadow($h, $v, $radius, $spread, $color) {
+  -webkit-box-shadow: $h $v $radius $spread $color;
+  -moz-box-shadow: $h $v $radius $spread $color;
+  box-shadow: $h $v $radius $spread $color;
+}
+
+@mixin text-shadow($h, $v, $radius, $color) {
+  text-shadow: $h $v $radius $color;
+  filter: dropshadow(color=$color, offx=$h, offy=$v);
+}
+
+@mixin linear-gradient($from, $to) {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+  background-image: -webkit-linear-gradient(top, $from, $to);
+  background-image:    -moz-linear-gradient(top, $from, $to);
+  background-image:     -ms-linear-gradient(top, $from, $to);
+  background-image:      -o-linear-gradient(top, $from, $to);
 }

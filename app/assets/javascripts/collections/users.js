@@ -9,7 +9,7 @@ Debacle.Collections.Users = Backbone.Collection.extend({
 		var leveled_up = false; 
 		
 		if (user.get('xp') + points >= level.get('xp_req') && levels.where({level: level.get('level') + 1})[0]) {
-			user.set({xp: user.get('xp') + points - level.get('xp_req'), level: user.get('level') + 1});
+			user.set({xp: user.get('xp') + points - level.get('xp_req'), level: user.get('level') + 1, votes: user.get('votes') + (2 * (user.get('level') + 1))});
 			leveled_up = true;
 		} else {
 			user.set({xp: user.get('xp') + points});

@@ -1,5 +1,9 @@
 Debacle::Application.routes.draw do
   
+  resources :reason_edits
+
+  resources :comments
+
   resources :topic_user_levels
   resources :topic_levels
   resources :global_levels

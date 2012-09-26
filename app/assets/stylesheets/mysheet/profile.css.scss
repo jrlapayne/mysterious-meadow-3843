@@ -1,0 +1,72 @@
+.profile-panel {
+	position: relative;
+	border: 1px solid $panelouterbordercolor;
+	width: 313px;
+	height: 110px;
+	margin: 0 auto;
+	@include rounded-corners(5px);
+	background-color: #fff;
+	padding: 0;
+
+	.profile-pic {
+		position: absolute;
+		top: 16px;
+		left: 20px;
+		height: 33px;
+		margin-right: 10px;
+		overflow: hidden;
+		@include rounded-corners(5px);
+	}
+	
+	.upper-subset {
+		margin: 0;
+		border-bottom: 1px solid $panelinnerbordercolor;
+		overflow: auto;
+		height: 65px;
+	}
+	
+	.name-text {
+		position: absolute;
+		top: 24px;
+		left: 65px;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 145px;
+		text-overflow: ellipsis;
+	}
+
+	.small-text {
+		font-size: 70%;
+		margin: 2px 0 0 0;
+		color: $lightgreytext;
+		@include text-shadow(0, 1px, 0, #ffffff);
+	}
+}
+
+
+button.fb-login-profile {
+	box-shadow: 0 0 2px 2px rgba(darken($facebookblue,15%), 0.99) inset;
+	@include rounded-corners(8px);
+	@include linear-gradient(lighten($facebookblue,7.5%), darken($facebookblue,7.5%));
+	@include fonts;
+	height: 33px;
+	width: 172px;
+	padding: 0px;
+	color: #ffffff;
+	font-size: 80%;
+	border: none;
+	text-align: center;
+	@include text-shadow(0, 1px, 0, rgba(darken($facebookblue,50%),0.99));	
+	font-weight: bold;
+	cursor: pointer;
+}
+
+span.sexting {
+	@include text-shadow(0, 1px, 0, #fff);
+	color: #333333;
+}
+
+.greenish {
+	@include text-shadow(0, 1px, 0, #fff);
+	color: darken(#47CC51, 15%);
+}

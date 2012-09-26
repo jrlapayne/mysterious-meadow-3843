@@ -1,0 +1,154 @@
+.topic-container {
+	margin: 0 auto;
+	width: 313px;
+	padding-top: 12px;
+}
+
+.active-topic-panel {
+	border: 1px solid $panelouterbordercolor;
+	@include rounded-corners(5px);
+	width: 305px;
+	background-color: #ffffff;
+	margin-left: -1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 10px;
+	padding-right: 8px;
+	.topic-arrow {
+		border-color: transparent rgba($backgroundcolor, 1) transparent transparent;
+		margin-top: 54px;
+		margin-left: 4px;
+	}
+	.arrow-container {
+		padding: 0;
+		@include right-rounded-corner(5px);
+		height: 130px;
+		margin-bottom: -58px;
+		margin-left: 0px;
+		margin-top: -13px;
+	}
+}
+
+.topic-panel {
+	padding: 10px 8px 0 0;
+	width: 305px;
+	background-color: #fff;
+	margin-left: -1px;
+	text-align: center;
+	height: 45px;
+	cursor: pointer;
+	.bold-text {
+		color: #999999;
+	}
+}
+
+.inner-topic-panel {
+	border-top: 1px solid $panelinnerbordercolor;
+	border-bottom: 1px solid $panelinnerbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	margin-top: -1px;
+}
+
+.top-topic-panel {
+	border-top: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	border-bottom: 1px solid $panelinnerbordercolor;
+	@include top-rounded-corners(5px);
+	.arrow-container {
+		@include top-right-rounded-corner(4px);
+	}
+}
+
+.bottom-topic-panel {
+	border-bottom: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	@include bottom-rounded-corners(5px);
+	.arrow-container {
+		@include bottom-right-rounded-corner(4px);
+	}
+}
+
+.top-panel-topic {
+	border-top: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	@include top-rounded-corners(5px);
+	.arrow-container {
+		@include top-right-rounded-corner(4px);
+	}
+}
+
+.bottom-panel-topic {
+	border-bottom: 1px solid $panelouterbordercolor;
+	border-left: 1px solid $panelouterbordercolor;
+	border-right: 1px solid $panelouterbordercolor;
+	@include bottom-rounded-corners(5px);
+	.arrow-container {
+		@include bottom-right-rounded-corner(4px);
+	}
+}
+
+.show-more-topic-text{
+	cursor: pointer;
+	font-size: 70%;
+	color: rgb(189,189,189);
+	padding-top: 8px;
+	padding-left: 10px;
+	letter-spacing: 1px;
+}
+
+.arrow-container {
+	height: 55px;
+	border-right: 1px solid $panelouterbordercolor;
+	float: right;
+	margin-top: -10px;
+	width: 20px;
+	margin-right: -9px;
+	background-color: #303030;
+	@include linear-gradient(lighten(#484848, 10%), lighten(#181818, 10%));
+}
+
+.topic-arrow {
+	border-style: solid;
+	width: 0;
+	height: 0;
+	border-color: transparent rgba($backgroundcolor, 0) transparent transparent;
+	border-width: 5px 10px 5px 0px;
+	z-index: 10;
+	margin: 23px -13px 0 4px;
+	float: left;
+}
+
+.show-facts-text {
+	cursor: pointer;
+	float: left;
+	font-size: 65%;
+	color: rgba($textblue, 0.65);
+	margin-top: -8px;
+	margin-left: 4px;
+	font-weight: bold;
+}
+
+.active-topic-footer {
+	margin-right: 21px;
+	width: 293px;
+	border-top: 1px solid $panelinnerbordercolor;
+	overflow: auto;
+	background-color: #ececec;
+	float: left;
+}
+
+.show-active-topic-text {
+	float: left;
+	font-size: 75%;
+	color: rgba($textblue, 0.65);
+	margin-left: 10px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-weight: bold;
+}
